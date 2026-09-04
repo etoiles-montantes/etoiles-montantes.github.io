@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+
+<title>Candidature envoyée — EMBT</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#092134;
+  --bordeaux:#961421;
+  --gold:#C59216;
+  --creme:#F3F2ED;
+  --font-display:'Archivo Black', Impact, sans-serif;
+  --font-body:'Barlow', system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:var(--font-body);font-size:17px;line-height:1.65;
+  color:var(--creme);background:var(--navy);
+  min-height:100vh;display:flex;flex-direction:column;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img{max-width:100%;display:block}
+
+.stripes{display:flex;flex-direction:column}
+.stripes i{display:block;height:7px}
+.stripes i:nth-child(1){background:var(--navy)}
+.stripes i:nth-child(2){background:var(--bordeaux)}
+.stripes i:nth-child(3){background:var(--gold)}
+.stripes-flip i:nth-child(1){background:var(--gold)}
+.stripes-flip i:nth-child(3){background:var(--navy)}
+
+.nav{background:var(--creme);border-bottom:2px solid var(--navy)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 22px;height:80px;display:flex;align-items:center}
+.nav-inner img{height:54px;width:auto}
+
+main{flex:1;position:relative;overflow:hidden;display:flex;align-items:center;padding:80px 0}
+.ghost{
+  position:absolute;right:-90px;top:50%;transform:translateY(-50%);
+  width:500px;opacity:.11;pointer-events:none;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px;position:relative;z-index:2}
+
+.divider{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.divider i{display:block;height:3px;width:78px;background:var(--gold)}
+
+h1{
+  font-family:var(--font-display);font-weight:400;line-height:1.03;
+  letter-spacing:-.02em;text-transform:uppercase;
+  font-size:clamp(30px,6.5vw,58px);max-width:16ch;color:var(--gold);
+}
+p{margin-top:24px;max-width:56ch;font-size:19px}
+.small{font-size:16px;margin-top:16px}
+
+.btn{
+  display:inline-block;font-weight:600;font-size:16px;text-decoration:none;
+  padding:15px 26px;border:2px solid transparent;margin-top:36px;
+  background:var(--gold);color:var(--navy);transition:background .18s ease;
+}
+.btn:hover{background:#DCA71E}
+a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+
+<body>
+
+<div class="stripes"><i></i><i></i><i></i></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html"><img src="logo-embt.png" alt="EMBT — Étoiles Montantes du Basket Toulousain"></a>
+  </div>
+</nav>
+
+<main>
+  <img class="ghost" src="embleme-filigrane.png" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <polygon points="12.0,1.0 14.7,8.3 22.5,8.6 16.4,13.4 18.5,20.9 12.0,16.6 5.5,20.9 7.6,13.4 1.5,8.6 9.3,8.3" fill="#C59216"/>
+      </svg>
+      <i></i>
+    </div>
+
+    <h1>Candidature bien reçue</h1>
+
+    <p>
+      Merci d'avoir pris le temps de nous écrire. Nous étudions chaque dossier
+      individuellement et revenons vers vous par mail dans les meilleurs délais.
+    </p>
+    <p class="small">
+      Une question en attendant ? Écrivez-nous à
+      <a href="mailto:contact.embt31@gmail.com">contact.embt31@gmail.com</a>.
+    </p>
+
+    <a href="index.html" class="btn">Retour au site</a>
+  </div>
+</main>
+
+<div class="stripes stripes-flip"><i></i><i></i><i></i></div>
+
+</body>
+</html>
