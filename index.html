@@ -163,9 +163,17 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
    10. NOS ACTIONS
    ============================================================ */
 .actions{margin-top:44px;display:grid;gap:18px}
-@media(min-width:640px){.actions{grid-template-columns:1fr 1fr}}
-@media(min-width:960px){.actions{grid-template-columns:1fr 1fr 1fr}}
-
+@media(min-width:640px){
+  .actions{grid-template-columns:repeat(4,1fr)}
+  .action{grid-column:span 2}
+  .action:nth-child(5){grid-column:2/span 2}
+}
+@media(min-width:960px){
+  .actions{grid-template-columns:repeat(6,1fr)}
+  .action{grid-column:span 2}
+  .action:nth-child(4){grid-column:2/span 2}
+  .action:nth-child(5){grid-column:auto/span 2}
+}
 .action{background:var(--creme);border:2px solid var(--navy);padding:0 26px 28px}
 .action h3{font-size:21px;text-transform:uppercase;margin-bottom:12px}
 .action p{font-size:16px;color:rgba(9,33,52,.8)}
