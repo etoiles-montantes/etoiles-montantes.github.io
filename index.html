@@ -22,6 +22,7 @@
   --gold:#C59216;
   --creme:#F3F2ED;          /* le blanc cassé de tes visuels */
   --creme-clair:#FBFAF7;    /* même famille, à peine plus clair, pour les cartes */
+  --white:#FFFFFF;          /* réservé au texte sur fond marine */
 
   --font-display:'Archivo Black', Impact, sans-serif;
   --font-body:'Barlow', system-ui, sans-serif;
@@ -87,9 +88,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 }
 .btn-gold{background:var(--gold);color:var(--navy)}
 .btn-gold:hover{background:#DCA71E}
-.btn-red{background:var(--bordeaux);color:var(--creme)}
+.btn-red{background:var(--bordeaux);color:var(--white)}
 .btn-red:hover{background:#B01A28}
-.btn-navy{background:var(--navy);color:var(--creme)}
+.btn-navy{background:var(--navy);color:var(--white)}
 .btn-navy:hover{background:#123651}
 
 /* ============================================================
@@ -115,7 +116,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 /* ============================================================
    7. HERO
    ============================================================ */
-.hero{position:relative;background:var(--navy);color:var(--creme);padding:84px 0 92px;overflow:hidden}
+.hero{position:relative;background:var(--navy);color:var(--white);padding:84px 0 92px;overflow:hidden}
 
 /* étoile en filigrane — l'emblème de l'association, traits seuls */
 .ghost{
@@ -130,7 +131,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .hero h1 .or{color:var(--gold)}
 
 .tagline{margin-top:26px;font-size:clamp(19px,3.4vw,26px);font-weight:600;color:var(--gold)}
-.hero p.intro{margin-top:20px;max-width:52ch;font-size:18px;color:rgba(243,242,237,.82)}
+.hero p.intro{margin-top:20px;max-width:52ch;font-size:18px;color:rgba(255,255,255,.82)}
 .hero-actions{margin-top:38px;display:flex;flex-wrap:wrap;gap:14px}
 
 /* ============================================================
@@ -138,12 +139,12 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
    ============================================================ */
 .section{position:relative;padding:78px 0;overflow:hidden}
 .section-creme{background:var(--creme)}
-.section-clair{background:var(--creme-clair)}
-.section-navy{background:var(--navy);color:var(--creme)}
+.section-white{background:var(--creme-clair)}
+.section-navy{background:var(--navy);color:var(--white)}
 
 .section .wrap{position:relative;z-index:2}
 .section h2{font-size:clamp(28px,5.5vw,44px);text-transform:uppercase;max-width:20ch}
-.section-navy h2{color:var(--creme)}
+.section-navy h2{color:var(--white)}
 .lead{margin-top:20px;max-width:60ch;font-size:19px}
 
 /* sur fond clair, on inverse les traits blancs en traits sombres */
@@ -178,7 +179,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
    ============================================================ */
 .statement{font-family:var(--font-display);font-size:clamp(30px,6.4vw,56px);line-height:1.05;text-transform:uppercase;max-width:18ch}
 .statement u{text-decoration:none;color:var(--gold)}
-.free-note{margin-top:34px;max-width:56ch;font-size:18px;color:rgba(243,242,237,.85);border-left:4px solid var(--bordeaux);padding-left:20px}
+.free-note{margin-top:34px;max-width:56ch;font-size:18px;color:rgba(255,255,255,.85);border-left:4px solid var(--bordeaux);padding-left:20px}
 
 /* ============================================================
    12. ÉVÉNEMENTS
@@ -205,11 +206,11 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .split{display:grid;gap:34px;margin-top:34px}
 @media(min-width:860px){.split{grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}}
 
-.share{border:1px solid rgba(243,242,237,.25);padding:26px}
-.share-row{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px solid rgba(243,242,237,.15)}
+.share{border:1px solid rgba(255,255,255,.25);padding:26px}
+.share-row{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.15)}
 .share-row:last-child{border-bottom:none}
 .share-row b{font-family:var(--font-display);font-size:24px;color:var(--gold)}
-.share-row span{font-size:15px;color:rgba(243,242,237,.8);max-width:22ch;text-align:right}
+.share-row span{font-size:15px;color:rgba(255,255,255,.8);max-width:22ch;text-align:right}
 
 /* ============================================================
    14. NOUS SOUTENIR
@@ -228,7 +229,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .contact-grid h3{font-size:18px;text-transform:uppercase;margin-bottom:10px}
 .contact-grid a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
 
-footer{background:var(--navy);color:rgba(243,242,237,.6);padding:34px 0;font-size:15px}
+footer{background:var(--navy);color:rgba(255,255,255,.6);padding:34px 0;font-size:15px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 </style>
 </head>
@@ -245,9 +246,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
       <img src="logo-embt.png" alt="EMBT — Étoiles Montantes du Basket Toulousain">
     </a>
     <div class="nav-links">
-      <a href="#projet">Présentation</a>
+      <a href="#projet">Le projet</a>
       <a href="#actions">Nos actions</a>
-      <a href="#maevasoa">Maevasoa Basketball</a>
+      <a href="#acces">Stages gratuits</a>
+      <a href="#evenements">Événements</a>
+      <a href="#maevasoa">Maevasoa</a>
       <a href="#soutenir">Nous soutenir</a>
     </div>
   </div>
@@ -259,10 +262,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
   <img class="ghost" src="embleme-filigrane.png" alt="" aria-hidden="true">
 
   <div class="wrap">
-    <h1>Les étoiles<br><span class="rouge">montantes<br></span> <span class="or">du basket<br></span> toulousain</h1>
-    <p class="tagline">Former aujourd'hui pour <br>transmettre demain.</p>
+    <h1>Étoiles <span class="rouge">montantes</span> <span class="or">du basket</span> toulousain</h1>
+    <p class="tagline">Former aujourd'hui pour transmettre demain.</p>
     <p class="intro">
-      Notre association a pour vocation de rendre l'excellence sportive accessible à tous. Nous organisons différents stages, tounois et autres évènement. 
+      Une association toulousaine qui organise des stages et des tournois pour les
+      jeunes joueurs et joueuses, avec une exigence de haut niveau et sans barrière d'argent.
     </p>
     <div class="hero-actions">
       <a href="#evenements" class="btn btn-gold">Participer à un événement</a>
@@ -283,7 +287,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
       </svg>
       <i></i>
     </div>
-    <h2>Présentation</h2>
+    <h2>Le projet</h2>
     <p class="lead">
       L'EMBT accompagne les jeunes basketteurs et basketteuses du territoire toulousain :
       stages, tournois, détection, mise en relation avec les clubs. Nous voulons que la
@@ -298,7 +302,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 </section>
 
 <!-- ============ NOS ACTIONS ============ -->
-<section class="section section-clair" id="actions">
+<section class="section section-white" id="actions">
   <div class="wrap">
     <div class="divider">
       <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -414,7 +418,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
   À AFFICHER quand tu auras de vrais chiffres : supprime cette ligne de commentaire
   et la ligne de fermeture tout en bas du bloc.
 
-  <section class="section section-clair" id="impact">
+  <section class="section section-white" id="impact">
     <div class="wrap">
       <h2>Notre impact</h2>
       <div class="actions">
@@ -439,7 +443,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 
     <div class="split">
       <div>
-        <p class="lead" style="color:rgba(243,242,237,.85)">
+        <p class="lead" style="color:rgba(255,255,255,.85)">
           Une partie de ce que génère l'association part à Madagascar, avec
           Maevasoa Basketball : stages gratuits, formation d'éducateurs, soutien
           aux acteurs locaux et amélioration des terrains.
@@ -459,7 +463,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 </section>
 
 <!-- ============ NOUS SOUTENIR ============ -->
-<section class="section section-clair" id="soutenir">
+<section class="section section-white" id="soutenir">
   <div class="wrap">
     <div class="divider">
       <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -509,12 +513,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
     <div class="contact-grid">
       <div>
         <h3>Nous écrire</h3>
-        <p><a href="mailto:contact.embt31@gmail.com">contact.embt31@gmail.com</a></p>
-        <p style="margin-top:8px;color:rgba(243,242,237,.7)">Inscriptions, partenariats, dons de matériel.</p>
+        <p><a href="mailto:contact@embt.fr">contact@embt.fr</a></p>
+        <p style="margin-top:8px;color:rgba(255,255,255,.7)">Inscriptions, partenariats, dons de matériel.</p>
       </div>
       <div>
         <h3>L'association</h3>
-        <p style="color:rgba(243,242,237,.8)">
+        <p style="color:rgba(255,255,255,.8)">
           EMBT — Étoiles Montantes du Basket Toulousain<br>
           Association loi 1901 — Toulouse
         </p>
