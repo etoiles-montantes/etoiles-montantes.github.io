@@ -532,15 +532,14 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
         </div>
 
         <div class="field">
-          <label for="categorie">Catégorie</label>
-          <select id="categorie" name="Catégorie" required>
+          <label for="poste">Poste</label>
+          <select id="poste" name="Poste">
             <option value="">Choisir…</option>
-            <option>U9 — poussins</option>
-            <option>U11</option>
-            <option>U13</option>
-            <option>U15</option>
-            <option>U18</option>
-            <option>Je ne sais pas</option>
+            <option>Meneur (1)</option>
+            <option>Arrière (2)</option>
+            <option>Ailier (3)</option>
+            <option>Intérieur (4)</option>
+            <option>Pivot (5)</option>
           </select>
         </div>
 
@@ -551,8 +550,13 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
         </div>
 
         <div class="field">
-          <label for="poste">Poste</label>
-          <input id="poste" name="Poste" type="text" placeholder="Meneur, ailier, pivot…">
+          <label for="niveau">Niveau de compétition</label>
+          <select id="niveau" name="Niveau de compétition" required>
+            <option value="">Choisir…</option>
+            <option>Départemental</option>
+            <option>Régional</option>
+            <option>National (Élite)</option>
+          </select>
         </div>
 
         <div class="field">
@@ -573,7 +577,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 
         <div class="field field-large">
           <label for="message">Parlez-nous du joueur ou de la joueuse</label>
-          <textarea id="message" name="Message" placeholder="Parcours, niveau, motivations, disponibilités…"></textarea>
+          <textarea id="message" name="Message" placeholder="Mensurations, parcours, motivations/ambitions…"></textarea>
         </div>
 
         <div class="consent">
