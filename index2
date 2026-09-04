@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EMBT — Étoiles Montantes du Basket Toulousain | Stages et tournois de basket à Toulouse</title>
+<meta name="description" content="L'EMBT organise des stages Élite et des tournois de basket à Toulouse pour les jeunes joueurs et joueuses. Certains stages sont entièrement gratuits.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   1. VARIABLES
+   ============================================================ */
+:root{
+  /* valeurs relevées directement dans le logo officiel et ton visuel */
+  --navy:#092134;
+  --bordeaux:#961421;
+  --gold:#C59216;
+  --creme:#F3F2ED;          /* le blanc cassé de tes visuels */
+  --creme-clair:#FBFAF7;    /* même famille, à peine plus clair, pour les cartes */
+
+  --font-display:'Archivo Black', Impact, sans-serif;
+  --font-body:'Barlow', system-ui, sans-serif;
+
+  --max:1120px;
+  --gutter:22px;
+}
+
+/* ============================================================
+   2. BASES
+   ============================================================ */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body{
+  font-family:var(--font-body);
+  font-size:17px;line-height:1.65;
+  color:var(--navy);
+  background:var(--creme);
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3{font-family:var(--font-display);font-weight:400;line-height:1.03;letter-spacing:-.02em}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+
+/* ============================================================
+   3. BANDEAU TRICOLORE — repris de tes visuels
+   ============================================================ */
+.stripes{display:flex;flex-direction:column}
+.stripes i{display:block;height:7px}
+.stripes i:nth-child(1){background:var(--navy)}
+.stripes i:nth-child(2){background:var(--bordeaux)}
+.stripes i:nth-child(3){background:var(--gold)}
+
+.stripes-flip i:nth-child(1){background:var(--gold)}
+.stripes-flip i:nth-child(3){background:var(--navy)}
+
+/* ============================================================
+   4. FILET À L'ÉTOILE — ouvre chaque section
+   ============================================================ */
+.divider{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.divider svg{flex:none}
+.divider i{display:block;height:3px;width:78px;background:var(--gold)}
+.section-navy .divider i{background:var(--gold)}
+
+/* ============================================================
+   5. BOUTONS
+   ============================================================ */
+.btn{
+  display:inline-block;font-family:var(--font-body);
+  font-weight:600;font-size:16px;text-decoration:none;
+  padding:15px 26px;border:2px solid transparent;
+  transition:background .18s ease,border-color .18s ease;
+}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:#DCA71E}
+.btn-red{background:var(--bordeaux);color:var(--creme)}
+.btn-red:hover{background:#B01A28}
+.btn-navy{background:var(--navy);color:var(--creme)}
+.btn-navy:hover{background:#123651}
+
+/* ============================================================
+   6. NAVIGATION
+   ============================================================ */
+.nav{position:sticky;top:0;z-index:50;background:var(--creme);border-bottom:1px solid rgba(9,33,52,.14)}
+.nav-inner{
+  max-width:var(--max);margin:0 auto;padding:0 var(--gutter);
+  height:80px;display:flex;align-items:center;justify-content:space-between;
+}
+.logo{display:flex;align-items:center}
+.logo img{height:54px;width:auto}
+
+.nav-links{display:none;gap:26px}
+.nav-links a{
+  color:var(--navy);text-decoration:none;
+  font-size:15px;font-weight:600;
+  padding:4px 0;border-bottom:2px solid transparent;
+}
+.nav-links a:hover{border-bottom-color:var(--bordeaux)}
+@media(min-width:900px){.nav-links{display:flex}}
+
+/* ============================================================
+   7. HERO
+   ============================================================ */
+.hero{position:relative;background:var(--navy);color:var(--creme);padding:84px 0 92px;overflow:hidden}
+
+/* étoile en filigrane — l'emblème de l'association, traits seuls */
+.ghost{
+  position:absolute;right:-80px;top:50%;transform:translateY(-50%);
+  width:540px;opacity:.11;pointer-events:none;
+}
+.ghost-left{left:-110px;right:auto;width:460px;opacity:.09}
+.hero .wrap{position:relative;z-index:2}
+
+.hero h1{font-size:clamp(40px,9.2vw,84px);max-width:14ch;text-transform:uppercase}
+.hero h1 .rouge{color:var(--bordeaux)}
+.hero h1 .or{color:var(--gold)}
+
+.tagline{margin-top:26px;font-size:clamp(19px,3.4vw,26px);font-weight:600;color:var(--gold)}
+.hero p.intro{margin-top:20px;max-width:52ch;font-size:18px;color:rgba(243,242,237,.82)}
+.hero-actions{margin-top:38px;display:flex;flex-wrap:wrap;gap:14px}
+
+/* ============================================================
+   8. SECTIONS
+   ============================================================ */
+.section{position:relative;padding:78px 0;overflow:hidden}
+.section-creme{background:var(--creme)}
+.section-clair{background:var(--creme-clair)}
+.section-navy{background:var(--navy);color:var(--creme)}
+
+.section .wrap{position:relative;z-index:2}
+.section h2{font-size:clamp(28px,5.5vw,44px);text-transform:uppercase;max-width:20ch}
+.section-navy h2{color:var(--creme)}
+.lead{margin-top:20px;max-width:60ch;font-size:19px}
+
+/* sur fond clair, on inverse les traits blancs en traits sombres */
+.ghost-soft{
+  position:absolute;left:-100px;bottom:-140px;
+  width:460px;opacity:.09;filter:invert(1);
+  pointer-events:none;z-index:1;
+}
+
+/* ============================================================
+   9. LE PROJET
+   ============================================================ */
+.claim{font-family:var(--font-display);font-size:clamp(26px,5vw,40px);line-height:1.12;text-transform:uppercase;margin-top:38px}
+.claim span{display:block}
+.claim span:nth-child(2){color:var(--bordeaux)}
+.claim span:nth-child(3){color:var(--gold)}
+
+/* ============================================================
+   10. NOS ACTIONS
+   ============================================================ */
+.actions{margin-top:44px;display:grid;gap:1px;background:rgba(9,33,52,.16);border:1px solid rgba(9,33,52,.16)}
+@media(min-width:640px){.actions{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.actions{grid-template-columns:1fr 1fr 1fr}}
+
+.action{background:var(--creme-clair);padding:32px 26px}
+.action h3{font-size:21px;text-transform:uppercase;margin-bottom:12px}
+.action p{font-size:16px;color:rgba(9,33,52,.8)}
+.action .num{font-family:var(--font-display);color:var(--bordeaux);font-size:14px;display:block;margin-bottom:14px;letter-spacing:.04em}
+
+/* ============================================================
+   11. STAGES GRATUITS
+   ============================================================ */
+.statement{font-family:var(--font-display);font-size:clamp(30px,6.4vw,56px);line-height:1.05;text-transform:uppercase;max-width:18ch}
+.statement u{text-decoration:none;color:var(--gold)}
+.free-note{margin-top:34px;max-width:56ch;font-size:18px;color:rgba(243,242,237,.85);border-left:4px solid var(--bordeaux);padding-left:20px}
+
+/* ============================================================
+   12. ÉVÉNEMENTS
+   ============================================================ */
+.events{margin-top:44px;display:grid;gap:20px}
+@media(min-width:820px){.events{grid-template-columns:1fr 1fr}}
+
+.event{background:var(--creme-clair);border:1px solid rgba(9,33,52,.16);padding:0 26px 28px}
+.event .top{display:flex;margin:0 -26px 22px;height:7px}
+.event .top i{flex:1}
+.event .top i:nth-child(1){background:var(--navy)}
+.event .top i:nth-child(2){background:var(--bordeaux)}
+.event .top i:nth-child(3){background:var(--gold)}
+.event .date{font-weight:600;font-size:15px;color:var(--bordeaux);display:block;margin-bottom:10px}
+.event h3{font-size:22px;text-transform:uppercase;margin-bottom:8px}
+.event .meta{font-size:15px;color:rgba(9,33,52,.7);margin-bottom:14px}
+.event p{font-size:16px;margin-bottom:20px}
+.empty-note{margin-top:30px;font-size:16px;color:rgba(9,33,52,.65)}
+
+/* ============================================================
+   13. MAEVASOA
+   ============================================================ */
+.maevasoa-title{font-family:var(--font-display);font-size:clamp(26px,5.4vw,46px);line-height:1.08;text-transform:uppercase}
+.split{display:grid;gap:34px;margin-top:34px}
+@media(min-width:860px){.split{grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}}
+
+.share{border:1px solid rgba(243,242,237,.25);padding:26px}
+.share-row{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px solid rgba(243,242,237,.15)}
+.share-row:last-child{border-bottom:none}
+.share-row b{font-family:var(--font-display);font-size:24px;color:var(--gold)}
+.share-row span{font-size:15px;color:rgba(243,242,237,.8);max-width:22ch;text-align:right}
+
+/* ============================================================
+   14. NOUS SOUTENIR
+   ============================================================ */
+.support{margin-top:40px;display:grid;gap:18px}
+@media(min-width:700px){.support{grid-template-columns:1fr 1fr}}
+.support-item{padding:26px;background:var(--creme);border-left:4px solid var(--gold)}
+.support-item h3{font-size:19px;text-transform:uppercase;margin-bottom:8px}
+.support-item p{font-size:16px;color:rgba(9,33,52,.8)}
+
+/* ============================================================
+   FORMULAIRE D'INSCRIPTION
+   ============================================================ */
+.form{margin-top:40px;max-width:760px}
+.form-grid{display:grid;gap:18px}
+@media(min-width:680px){.form-grid{grid-template-columns:1fr 1fr}}
+.field-large{grid-column:1/-1}
+
+.field label{display:block;font-size:14px;font-weight:600;letter-spacing:.02em;margin-bottom:7px}
+.field input,.field select,.field textarea{
+  width:100%;font-family:var(--font-body);font-size:16px;
+  color:var(--navy);background:var(--creme-clair);
+  border:1px solid rgba(9,33,52,.28);border-radius:0;padding:13px 14px;
+}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:3px solid var(--gold);outline-offset:1px;border-color:var(--navy);
+}
+.field .hint{font-size:13px;color:rgba(9,33,52,.65);margin-top:6px}
+
+.consent{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:15px;color:rgba(9,33,52,.85)}
+.consent input{width:20px;height:20px;flex:none;margin-top:3px;accent-color:var(--bordeaux)}
+.form-send{grid-column:1/-1;margin-top:6px}
+
+/* champ piège anti-robots : invisible pour un visiteur */
+.trap{position:absolute;left:-9999px;opacity:0}
+
+/* ============================================================
+   15. CONTACT ET PIED DE PAGE
+   ============================================================ */
+.contact-grid{margin-top:36px;display:grid;gap:26px}
+@media(min-width:700px){.contact-grid{grid-template-columns:1fr 1fr}}
+.contact-grid h3{font-size:18px;text-transform:uppercase;margin-bottom:10px}
+.contact-grid a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+
+footer{background:var(--navy);color:rgba(243,242,237,.6);padding:34px 0;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+</style>
+</head>
+
+<body>
+
+<!-- bandeau tricolore du haut -->
+<div class="stripes"><i></i><i></i><i></i></div>
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">
+      <img src="logo-embt.png" alt="EMBT — Étoiles Montantes du Basket Toulousain">
+    </a>
+    <div class="nav-links">
+      <a href="#projet">Présentation</a>
+      <a href="#actions">Nos actions</a>
+      <a href="#maevasoa">Maevasoa Basketball</a>
+      <a href="#soutenir">Nous soutenir</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+
+  <img class="ghost" src="embleme-filigrane.png" alt="" aria-hidden="true">
+
+  <div class="wrap">
+    <h1>Les étoiles<br><span class="rouge">montantes<br></span> <span class="or">du basket<br></span> toulousain</h1>
+    <p class="tagline">Former aujourd'hui pour <br>transmettre demain.</p>
+    <p class="intro">
+      Notre association a pour vocation de rendre l'excellence sportive accessible à tous.
+      Nous organisons différents stages, tournois et autres évènements destinés aux jeunes
+      joueurs et joueuses de la région toulousaine. Notre objectif : permettre à chacun de
+      progresser dans les meilleures conditions.
+    </p>
+    <div class="hero-actions">
+      <a href="#evenements" class="btn btn-gold">Participer à un événement</a>
+      <a href="#soutenir" class="btn btn-red">Soutenir le projet</a>
+    </div>
+  </div>
+</header>
+
+<div class="stripes stripes-flip"><i></i><i></i><i></i></div>
+
+<!-- ============ LE PROJET ============ -->
+<section class="section section-creme" id="projet">
+  <img class="ghost-soft" src="embleme-filigrane.png" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <polygon points="12.0,1.0 14.7,8.3 22.5,8.6 16.4,13.4 18.5,20.9 12.0,16.6 5.5,20.9 7.6,13.4 1.5,8.6 9.3,8.3" fill="#C59216"/>
+      </svg>
+      <i></i>
+    </div>
+    <h2>Projet Élite</h2>
+    <p class="lead">
+      L'EMBT a pour vocation d'accompagner les jeunes basketteurs et basketteuses les plus
+      prometteurs du territoire toulousain : stages, tournois, voyages, détections, mise en
+      relation avec les clubs. Nous voulons que la progression dépende du travail fourni,
+      pas des moyens de la famille. C'est pour cela que le projet Élite est entièrement
+      gratuit, sur invitation ou sur dossier, financé par nos partenaires et les campagnes
+      de dons libres proposés aux familles à la fin des stages.
+    </p>
+    <p class="claim">
+      <span>Talent</span>
+      <span>Ambition</span>
+      <span>Performance</span>
+    </p>
+
+    <!-- ============================================================
+         BOUTON D'INSCRIPTION
+         Remplace le href ci-dessous par le lien de ton formulaire
+         quand tu l'auras créé. En attendant, il ouvre la messagerie.
+         ============================================================ -->
+    <div class="hero-actions">
+      <a href="#inscription" class="btn btn-red">Je souhaite rejoindre l'aventure</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NOS ACTIONS ============ -->
+<section class="section section-clair" id="actions">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <polygon points="12.0,1.0 14.7,8.3 22.5,8.6 16.4,13.4 18.5,20.9 12.0,16.6 5.5,20.9 7.6,13.4 1.5,8.6 9.3,8.3" fill="#C59216"/>
+      </svg>
+      <i></i>
+    </div>
+    <h2>Nos actions</h2>
+
+    <div class="actions">
+      <article class="action">
+        <span class="num">Stages</span>
+        <h3>Stages Élite</h3>
+        <p>Technique individuelle, lecture du jeu, intensité, prise de décision.
+        Des séances construites comme celles du haut niveau, adaptées à l'âge des joueurs.</p>
+      </article>
+
+      <article class="action">
+        <span class="num">Compétition</span>
+        <h3>Tournois</h3>
+        <p>Du temps de jeu, de nouveaux adversaires, un vrai cadre compétitif.
+        Nous construisons des événements, pas de simples journées de matchs.</p>
+      </article>
+
+      <article class="action">
+        <span class="num">Suivi</span>
+        <h3>Détection et développement</h3>
+        <p>Repérer les profils, les accompagner dans la durée et les mettre en relation
+        avec les structures capables de les faire progresser.</p>
+      </article>
+
+      <article class="action">
+        <span class="num">Réseau</span>
+        <h3>Partenariats</h3>
+        <p>Entreprises, clubs et institutions qui soutiennent le projet et gagnent
+        en visibilité auprès de la communauté basket toulousaine.</p>
+      </article>
+
+      <article class="action">
+        <span class="num">International</span>
+        <h3>Maevasoa Basketball</h3>
+        <p>Une partie de nos ressources finance le développement du basket
+        à Madagascar : stages gratuits, formation, équipements.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STAGES GRATUITS ============ -->
+<section class="section section-navy" id="acces">
+  <img class="ghost ghost-left" src="embleme-filigrane.png" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <polygon points="12.0,1.0 14.7,8.3 22.5,8.6 16.4,13.4 18.5,20.9 12.0,16.6 5.5,20.9 7.6,13.4 1.5,8.6 9.3,8.3" fill="#C59216"/>
+      </svg>
+      <i></i>
+    </div>
+    <p class="statement">Le haut niveau ne devrait pas être une question de <u>moyens</u>.</p>
+    <p class="free-note">
+      Nos stages Élite sont accessibles gratuitement. Aucune obligation de paiement,
+      aucun dossier à monter. Les familles qui le souhaitent et qui le peuvent
+      soutiennent l'association par un don libre — c'est ce qui permet aux suivants
+      de venir gratuitement à leur tour.
+    </p>
+    <div class="hero-actions">
+      <a href="#soutenir" class="btn btn-gold">Faire un don libre</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÉVÉNEMENTS ============ -->
+<section class="section section-creme" id="evenements">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <polygon points="12.0,1.0 14.7,8.3 22.5,8.6 16.4,13.4 18.5,20.9 12.0,16.6 5.5,20.9 7.6,13.4 1.5,8.6 9.3,8.3" fill="#C59216"/>
+      </svg>
+      <i></i>
+    </div>
+    <h2>Prochains événements</h2>
+    <p class="lead">Stages, tournois et journées de détection à venir.</p>
+
+    <div class="events">
+
+      <!-- MODÈLE : copie ce bloc <article> pour ajouter un événement -->
+      <article class="event">
+        <div class="top"><i></i><i></i><i></i></div>
+        <span class="date">Date à venir</span>
+        <h3>Stage Élite U13–U15</h3>
+        <p class="meta">Toulouse · Gratuit · Places limitées</p>
+        <p>Trois jours de travail technique et de confrontation, encadrés par nos coachs.</p>
+        <a href="#contact" class="btn btn-red">S'inscrire</a>
+      </article>
+
+      <article class="event">
+        <div class="top"><i></i><i></i><i></i></div>
+        <span class="date">Date à venir</span>
+        <h3>Tournoi EMBT</h3>
+        <p class="meta">Toulouse · Équipes de club · Plusieurs catégories</p>
+        <p>Une journée de compétition ouverte aux clubs du territoire.</p>
+        <a href="#contact" class="btn btn-red">Inscrire une équipe</a>
+      </article>
+
+    </div>
+
+    <p class="empty-note">Le calendrier complet de la saison sera publié prochainement.</p>
+  </div>
+</section>
+
+<!--
+  ============ SECTION IMPACT ============
+  À AFFICHER quand tu auras de vrais chiffres : supprime cette ligne de commentaire
+  et la ligne de fermeture tout en bas du bloc.
+
+  <section class="section section-clair" id="impact">
+    <div class="wrap">
+      <h2>Notre impact</h2>
+      <div class="actions">
+        <article class="action"><h3>120</h3><p>jeunes accompagnés</p></article>
+        <article class="action"><h3>8</h3><p>stages organisés</p></article>
+        <article class="action"><h3>14</h3><p>clubs partenaires</p></article>
+      </div>
+    </div>
+  </section>
+-->
+
+<!-- ============ MAEVASOA ============ -->
+<section class="section section-navy" id="maevasoa">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <polygon points="12.0,1.0 14.7,8.3 22.5,8.6 16.4,13.4 18.5,20.9 12.0,16.6 5.5,20.9 7.6,13.4 1.5,8.6 9.3,8.3" fill="#C59216"/>
+      </svg>
+      <i></i>
+    </div>
+    <p class="maevasoa-title">Du basket toulousain<br>au basket malgache.</p>
+
+    <div class="split">
+      <div>
+        <p class="lead" style="color:rgba(243,242,237,.85)">
+          Une partie de ce que génère l'association part à Madagascar, avec
+          Maevasoa Basketball : stages gratuits, formation d'éducateurs, soutien
+          aux acteurs locaux et amélioration des terrains.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-gold">Découvrir Maevasoa Basketball</a>
+        </div>
+      </div>
+
+      <div class="share">
+        <div class="share-row"><b>70 %</b><span>projets sportifs et jeunes joueurs</span></div>
+        <div class="share-row"><b>20 %</b><span>Maevasoa Basketball, Madagascar</span></div>
+        <div class="share-row"><b>10 %</b><span>fonctionnement de l'association</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORMULAIRE D'INSCRIPTION ============ -->
+<section class="section section-clair" id="inscription">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <polygon points="12.0,1.0 14.7,8.3 22.5,8.6 16.4,13.4 18.5,20.9 12.0,16.6 5.5,20.9 7.6,13.4 1.5,8.6 9.3,8.3" fill="#C59216"/>
+      </svg>
+      <i></i>
+    </div>
+    <h2>Rejoindre l'aventure</h2>
+    <p class="lead">
+      Remplissez ce formulaire et nous revenons vers vous. Les candidatures sont
+      étudiées au cas par cas, quel que soit le club d'origine.
+    </p>
+
+    <!-- ============================================================
+         OÙ ARRIVENT LES RÉPONSES
+         L'adresse après action="...formsubmit.co/" reçoit les mails.
+         Pour changer de destinataire, modifie-la ici.
+         ============================================================ -->
+    <form class="form" action="https://formsubmit.co/contact.embt31@gmail.com" method="POST">
+
+      <!-- réglages du service, invisibles pour le visiteur -->
+      <input type="hidden" name="_subject" value="Nouvelle candidature EMBT">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" class="trap" tabindex="-1" autocomplete="off">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="prenom">Prénom du joueur ou de la joueuse</label>
+          <input id="prenom" name="Prénom" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="nom">Nom</label>
+          <input id="nom" name="Nom" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="naissance">Date de naissance</label>
+          <input id="naissance" name="Date de naissance" type="date" required>
+        </div>
+
+        <div class="field">
+          <label for="categorie">Catégorie</label>
+          <select id="categorie" name="Catégorie" required>
+            <option value="">Choisir…</option>
+            <option>U9 — poussins</option>
+            <option>U11</option>
+            <option>U13</option>
+            <option>U15</option>
+            <option>U18</option>
+            <option>Je ne sais pas</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="club">Club actuel</label>
+          <input id="club" name="Club actuel" type="text">
+          <p class="hint">Laissez vide si le joueur n'est licencié nulle part.</p>
+        </div>
+
+        <div class="field">
+          <label for="poste">Poste</label>
+          <input id="poste" name="Poste" type="text" placeholder="Meneur, ailier, pivot…">
+        </div>
+
+        <div class="field">
+          <label for="responsable">Nom du responsable légal</label>
+          <input id="responsable" name="Responsable légal" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="tel">Téléphone</label>
+          <input id="tel" name="Téléphone" type="tel" required>
+        </div>
+
+        <div class="field field-large">
+          <label for="email">Adresse mail</label>
+          <input id="email" name="Email" type="email" required>
+          <p class="hint">C'est à cette adresse que nous répondrons.</p>
+        </div>
+
+        <div class="field field-large">
+          <label for="message">Parlez-nous du joueur ou de la joueuse</label>
+          <textarea id="message" name="Message" placeholder="Parcours, niveau, motivations, disponibilités…"></textarea>
+        </div>
+
+        <div class="consent">
+          <input id="consent" name="Consentement" type="checkbox" value="Oui" required>
+          <label for="consent">
+            En tant que responsable légal, j'autorise l'EMBT à conserver ces informations
+            pour traiter la candidature et à me recontacter. Elles ne sont ni revendues ni
+            transmises à des tiers.
+          </label>
+        </div>
+
+        <div class="form-send">
+          <button type="submit" class="btn btn-red">Envoyer ma candidature</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ NOUS SOUTENIR ============ -->
+<section class="section section-clair" id="soutenir">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <polygon points="12.0,1.0 14.7,8.3 22.5,8.6 16.4,13.4 18.5,20.9 12.0,16.6 5.5,20.9 7.6,13.4 1.5,8.6 9.3,8.3" fill="#C59216"/>
+      </svg>
+      <i></i>
+    </div>
+    <h2>Nous soutenir</h2>
+    <p class="lead">Chaque soutien finance directement les stages, les tournois et les jeunes.</p>
+
+    <div class="support">
+      <article class="support-item">
+        <h3>Faire un don</h3>
+        <p>Ponctuel ou régulier. C'est ce qui garde nos stages gratuits.</p>
+      </article>
+      <article class="support-item">
+        <h3>Devenir partenaire</h3>
+        <p>Visibilité auprès des jeunes, des familles et des clubs toulousains.</p>
+      </article>
+      <article class="support-item">
+        <h3>Donner du matériel</h3>
+        <p>Ballons, textile, équipement : tout sert, ici ou à Madagascar.</p>
+      </article>
+      <article class="support-item">
+        <h3>Venir sur nos événements</h3>
+        <p>Jouer, coacher, arbitrer, tenir une buvette, filmer.</p>
+      </article>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-navy">Nous écrire</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section-navy" id="contact">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <polygon points="12.0,1.0 14.7,8.3 22.5,8.6 16.4,13.4 18.5,20.9 12.0,16.6 5.5,20.9 7.6,13.4 1.5,8.6 9.3,8.3" fill="#C59216"/>
+      </svg>
+      <i></i>
+    </div>
+    <h2>Contact</h2>
+
+    <div class="contact-grid">
+      <div>
+        <h3>Nous écrire</h3>
+        <p><a href="mailto:contact.embt31@gmail.com">contact.embt31@gmail.com</a></p>
+        <p style="margin-top:8px;color:rgba(243,242,237,.7)">Inscriptions, partenariats, dons de matériel.</p>
+      </div>
+      <div>
+        <h3>L'association</h3>
+        <p style="color:rgba(243,242,237,.8)">
+          EMBT — Étoiles Montantes du Basket Toulousain<br>
+          Association loi 1901 — Toulouse
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>EMBT — Étoiles Montantes du Basket Toulousain</span>
+    <span>Association loi 1901 · Toulouse</span>
+  </div>
+</footer>
+
+<!-- bandeau tricolore du bas -->
+<div class="stripes stripes-flip"><i></i><i></i><i></i></div>
+
+</body>
+</html>
