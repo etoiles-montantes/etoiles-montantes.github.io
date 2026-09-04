@@ -169,7 +169,10 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .action{background:var(--creme);border:2px solid var(--navy);padding:0 26px 28px}
 .action h3{font-size:21px;text-transform:uppercase;margin-bottom:12px}
 .action p{font-size:16px;color:rgba(9,33,52,.8)}
-.action .num{font-family:var(--font-display);color:var(--bordeaux);font-size:14px;display:block;margin-bottom:14px;letter-spacing:.04em}
+/* sur fond marine, le texte des cartes repasse en marine */
+.section-navy .action,
+.section-navy .support-item,
+.section-navy .share{color:var(--navy)}
 
 /* ============================================================
    12. ÉVÉNEMENTS
@@ -355,43 +358,34 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
     <div class="actions">
       <article class="action">
         <div class="top"><i></i><i></i><i></i></div>
-        <span class="num">Stages</span>
-        <h3>Stages Élite</h3>
-        <p>Technique individuelle, lecture du jeu, intensité, prise de décision.
-        Des séances construites comme celles du haut niveau, adaptées à l'âge des joueurs.</p>
+        <h3>Stages</h3>
+        <p>Technique individuelle, lecture du jeu, prise de décision, préparation physique et mentale… Des séances de haut niveau dirigées par des entraîneurs diplômés, adaptées à l'âge et au niveau de pratique des joueurs et joueuses.</p>
       </article>
 
       <article class="action">
         <div class="top"><i></i><i></i><i></i></div>
-        <span class="num">Compétition</span>
         <h3>Tournois</h3>
-        <p>Du temps de jeu, de nouveaux adversaires, un vrai cadre compétitif.
-        Nous construisons des événements, pas de simples journées de matchs.</p>
+        <p>Plateaux par catégorie, rencontres inter-clubs, formats 3x3 et 5x5… Des compétitions organisées dans un vrai cadre sportif, pour offrir du temps de jeu, confronter les jeunes à de nouveaux adversaires et faire vivre un événement aux joueurs comme aux familles.</p>
       </article>
 
       <article class="action">
         <div class="top"><i></i><i></i><i></i></div>
-        <span class="num">Suivi</span>
-        <h3>Détection et développement</h3>
-        <p>Repérer les profils, les accompagner dans la durée et les mettre en relation
-        avec les structures capables de les faire progresser.</p>
+        <h3>Suivi individuel</h3>
+        <p>Accompagnement des jeunes dans la durée : construction et suivi de leur projet sportif, entraînements individuels (basket, préparation physique et mentale…), mise en relation avec les coachs ou clubs les plus adaptés à leur progression (journées de détection, visite de centre de formation…).</p>
       </article>
 
       <article class="action">
         <div class="top"><i></i><i></i><i></i></div>
-        <span class="num">Réseau</span>
-        <h3>Partenariats</h3>
-        <p>Entreprises, clubs et institutions qui soutiennent le projet et gagnent
-        en visibilité auprès de la communauté basket toulousaine.</p>
+        <h3>Événements solidaires</h3>
+        <p>Repas, kermesses, vide-greniers et autres activités en tout genre… Des moments de convivialité pour partager de bons moments entre membres de la communauté EMBT et aider à financer nos différents projets.</p>
       </article>
 
       <article class="action">
         <div class="top"><i></i><i></i><i></i></div>
-        <span class="num">International</span>
         <h3>Maevasoa Basketball</h3>
-        <p>Une partie de nos ressources finance le développement du basket
-        à Madagascar : stages gratuits, formation, équipements.</p>
+        <p>Stages gratuits, formations d'entraîneurs, don de matériel, construction et rénovation de terrains… L'EMBT participe activement, main dans la main avec Maevasoa, au développement du basket à Madagascar.</p>
       </article>
+
     </div>
   </div>
 </section>
@@ -512,6 +506,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
       <input type="hidden" name="_subject" value="Nouvelle candidature EMBT">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
+      <!-- page affichée au visiteur après l'envoi : adresse complète obligatoire -->
+      <input type="hidden" name="_next" value="https://etoiles-montantes.github.io/merci.html">
       <input type="text" name="_honey" class="trap" tabindex="-1" autocomplete="off">
 
       <div class="form-grid">
