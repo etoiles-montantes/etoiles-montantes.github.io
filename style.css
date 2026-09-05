@@ -261,21 +261,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
    AJOUTS POUR LE SITE MULTI-PAGES
    ============================================================ */
 
-/* bannière en tête des pages internes */
-.page-hero{position:relative;background:var(--navy);color:var(--creme);padding:64px 0 70px;overflow:hidden}
-.page-hero .wrap{position:relative;z-index:2}
-.page-hero h1{
-  font-family:var(--font-display);font-weight:400;line-height:1.03;letter-spacing:-.02em;
-  font-size:clamp(32px,6.5vw,60px);text-transform:uppercase;max-width:16ch;color:var(--gold);
-}
-.page-hero .intro{margin-top:20px;max-width:52ch;font-size:18px;color:rgba(243,242,237,.82)}
 
 /* onglet de la page en cours */
 .nav-links a.actif{border-bottom-color:var(--bordeaux)}
 
-/* cartes de résumé de la page d'accueil */
-.resume-grid{margin-top:44px;display:grid;gap:18px}
-@media(min-width:640px){.resume-grid{grid-template-columns:1fr 1fr}}
-.resume{background:var(--creme);border:2px solid var(--navy);padding:0 26px 28px}
-.resume h3{font-size:21px;text-transform:uppercase;margin-bottom:12px}
-.resume p{font-size:16px;color:rgba(9,33,52,.8);margin-bottom:22px}
