@@ -271,7 +271,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 /* ============================================================
    EN-TÊTE
    ============================================================ */
-:root{--drawer-l:300px}
+:root{--drawer-l:300px;--entete-h:103px}  /* 21 px de bandeau + 80 px de barre + 2 px de filet */
 
 .entete{position:sticky;top:0;z-index:60;background:var(--creme)}
 
@@ -308,8 +308,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
    Le tiroir recouvre le coin haut-gauche et rejoue exactement
    la barre du haut : le bouton et le logo restent en place.
    ============================================================ */
+/* le tiroir démarre sous le filet de l'en-tête, qui reste visible */
 .drawer{
-  position:fixed;top:0;left:0;bottom:0;z-index:80;
+  position:fixed;top:var(--entete-h);left:0;bottom:0;z-index:80;
   width:var(--drawer-l);max-width:86vw;
   background:var(--navy);color:var(--creme);
   transform:translateX(-100%);transition:transform .22s ease;
@@ -318,23 +319,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .drawer.ouvert{transform:translateX(0)}
 .drawer > .stripes:last-child{margin-top:auto}
 
-/* la tête du tiroir reprend la barre du haut, aux mêmes mesures */
-.drawer-tete{
-  height:80px;flex:none;display:flex;align-items:center;gap:14px;
-  padding:0 var(--gutter);
-  background:var(--creme);border-bottom:2px solid var(--navy);
-}
-.drawer-fermer{
-  display:flex;flex-direction:column;justify-content:center;gap:5px;
-  width:44px;height:44px;flex:none;padding:10px;
-  background:var(--navy);border:2px solid var(--navy);cursor:pointer;
-}
-.drawer-fermer i{display:block;height:2px;background:var(--creme)}
-.drawer-fermer:hover{background:transparent}
-.drawer-fermer:hover i{background:var(--navy)}
-
-.drawer-logo{display:flex;align-items:center}
-.drawer-logo img{height:54px;width:auto}
 
 .drawer nav{display:flex;flex-direction:column;padding:16px 0}
 .drawer nav a{
@@ -347,19 +331,18 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .drawer-separateur{height:2px;background:var(--gold);margin:10px 22px}
 .drawer .btn{margin:8px 22px 26px}
 
-.burger:focus-visible,.drawer-fermer:focus-visible,.drawer nav a:focus-visible{
+.burger:focus-visible,.drawer nav a:focus-visible{
   outline:3px solid var(--gold);outline-offset:3px;
 }
 
 /* ============================================================
    MENU OUVERT : le contenu se décale, il reste lisible et cliquable
    ============================================================ */
-.entete,body > header,body > section{transition:margin-left .22s ease}
+body > header,body > section{transition:margin-left .22s ease}
 
-.drawer-voile{position:fixed;inset:0;z-index:70;display:none;background:transparent;border:none}
+.drawer-voile{position:fixed;top:var(--entete-h);left:0;right:0;bottom:0;z-index:70;display:none;background:transparent;border:none}
 
 @media(min-width:900px){
-  body.menu-ouvert .entete,
   body.menu-ouvert > header,
   body.menu-ouvert > section{margin-left:var(--drawer-l)}
 }
@@ -371,5 +354,5 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 }
 
 @media (prefers-reduced-motion:reduce){
-  .drawer,.entete,body > header,body > section{transition:none}
+  .drawer,body > header,body > section{transition:none}
 }
