@@ -283,13 +283,12 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 
 /* le bouton à trois barres, tout à gauche */
 .burger{
-  display:flex;flex-direction:column;justify-content:center;gap:5px;
-  width:44px;height:44px;flex:none;padding:10px;
-  background:transparent;border:2px solid var(--navy);cursor:pointer;
+  display:flex;flex-direction:column;justify-content:center;gap:6px;
+  width:44px;height:44px;flex:none;padding:9px 4px;
+  background:transparent;border:none;cursor:pointer;
 }
-.burger i{display:block;height:2px;background:var(--navy)}
-.burger:hover{background:var(--navy)}
-.burger:hover i{background:var(--creme)}
+.burger i{display:block;height:3px;background:var(--navy);transition:background .15s ease}
+.burger:hover i{background:var(--bordeaux)}
 
 /* le logo juste à sa droite, les onglets repoussés au bout */
 .logo{display:flex;align-items:center;margin-right:auto}
@@ -317,7 +316,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
   display:flex;flex-direction:column;overflow-y:auto;
 }
 .drawer.ouvert{transform:translateX(0)}
-.drawer > .stripes:last-child{margin-top:auto}
 
 
 .drawer nav{display:flex;flex-direction:column;padding:16px 0}
@@ -329,7 +327,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .drawer nav a.actif{border-left-color:var(--gold);color:var(--gold)}
 
 .drawer-separateur{height:2px;background:var(--gold);margin:10px 22px}
-.drawer .btn{margin:8px 22px 26px}
 
 .burger:focus-visible,.drawer nav a:focus-visible{
   outline:3px solid var(--gold);outline-offset:3px;
