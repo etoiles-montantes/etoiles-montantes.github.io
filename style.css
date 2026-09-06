@@ -81,8 +81,10 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .nav{position:sticky;top:0;z-index:50;background:var(--creme);border-bottom:1px solid rgba(9,33,52,.14)}
 .nav-inner{
   max-width:var(--max);margin:0 auto;padding:0 var(--gutter);
-  height:80px;display:flex;align-items:center;justify-content:space-between;
+  height:80px;display:flex;align-items:center;gap:12px;
 }
+/* pousse les onglets à droite, le bouton et le logo restent collés à gauche */
+.nav-inner .logo{margin-right:auto}
 .logo{display:flex;align-items:center}
 .logo img{height:54px;width:auto}
 
@@ -299,17 +301,18 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .drawer-voile.ouvert{display:block}
 
 .drawer-tete{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:18px 22px;border-bottom:2px solid var(--gold);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:16px 18px;background:var(--creme);border-bottom:2px solid var(--bordeaux);
 }
-.drawer-tete span{font-family:var(--font-display);font-size:18px;color:var(--gold)}
+.drawer-logo{display:flex;align-items:center}
+.drawer-logo img{height:44px;width:auto}
 
 .drawer-fermer{
-  width:36px;height:36px;padding:0;line-height:1;
-  background:transparent;border:2px solid var(--creme);color:var(--creme);
+  width:36px;height:36px;flex:none;padding:0;line-height:1;
+  background:transparent;border:2px solid var(--navy);color:var(--navy);
   font-size:20px;cursor:pointer;
 }
-.drawer-fermer:hover{background:var(--creme);color:var(--navy)}
+.drawer-fermer:hover{background:var(--navy);color:var(--creme)}
 
 .drawer nav{display:flex;flex-direction:column;padding:12px 0}
 .drawer nav a{
