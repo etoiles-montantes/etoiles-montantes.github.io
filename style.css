@@ -309,7 +309,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
    ============================================================ */
 /* le tiroir démarre sous le filet de l'en-tête, qui reste visible */
 .drawer{
-  position:fixed;top:var(--entete-h);left:0;bottom:0;z-index:80;
+  position:fixed;top:calc(var(--entete-h) - 2px);left:0;bottom:0;z-index:80;
   width:var(--drawer-l);max-width:86vw;
   background:var(--navy);color:var(--creme);
   transform:translateX(-100%);transition:transform .22s ease;
@@ -337,7 +337,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
    ============================================================ */
 body > header,body > section{transition:margin-left .22s ease}
 
-.drawer-voile{position:fixed;top:var(--entete-h);left:0;right:0;bottom:0;z-index:70;display:none;background:transparent;border:none}
+.drawer-voile{position:fixed;top:calc(var(--entete-h) - 2px);left:0;right:0;bottom:0;z-index:70;display:none;background:transparent;border:none}
 
 @media(min-width:900px){
   body.menu-ouvert > header,
