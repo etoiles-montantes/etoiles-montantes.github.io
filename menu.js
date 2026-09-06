@@ -12,6 +12,7 @@
     if (voile) voile.classList.add('ouvert');
     bouton.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';          // bloque le défilement derrière
+    document.body.classList.add('menu-ouvert');       // masque le logo de la barre du haut
     var premier = tiroir.querySelector('a');
     if (premier) premier.focus();
   }
@@ -21,6 +22,7 @@
     if (voile) voile.classList.remove('ouvert');
     bouton.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    document.body.classList.remove('menu-ouvert');
     bouton.focus();
   }
 

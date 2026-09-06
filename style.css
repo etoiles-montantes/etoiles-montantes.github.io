@@ -282,6 +282,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .burger:hover{background:var(--navy)}
 .burger:hover i{background:var(--creme)}
 
+/* menu ouvert : le logo de la barre disparaît pour éviter le doublon */
+body.menu-ouvert .nav .logo{visibility:hidden}
+
 /* le tiroir lui-même */
 .drawer{
   position:fixed;top:0;left:0;bottom:0;z-index:80;
