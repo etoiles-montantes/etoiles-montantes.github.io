@@ -18,8 +18,30 @@
 
 <div class="stripes"><i></i><i></i><i></i></div>
 
+<button class="drawer-voile" aria-label="Fermer le menu"></button>
+
+<aside class="drawer" id="menu-lateral" aria-label="Menu principal">
+  <div class="drawer-tete">
+    <span>EMBT</span>
+    <button class="drawer-fermer" aria-label="Fermer le menu">&times;</button>
+  </div>
+  <nav>
+      <a href="projet-elite.html">Projet Élite</a>
+      <a href="nos-actions.html">Nos actions</a>
+      <a href="maevasoa.html">Maevasoa Basketball</a>
+      <a href="nous-soutenir.html">Nous soutenir</a>
+    <div class="drawer-separateur"></div>
+      <a href="staff.html">Staff</a>
+      <a href="partenaires.html">Partenaires</a>
+  </nav>
+  <a href="rejoindre.html" class="btn btn-red">Rejoindre l'aventure</a>
+</aside>
+
 <nav class="nav">
   <div class="nav-inner">
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-lateral">
+      <i></i><i></i><i></i>
+    </button>
     <a href="index.html"><img src="logo-embt.png" alt="EMBT — Étoiles Montantes du Basket Toulousain"></a>
   </div>
 </nav>
@@ -50,6 +72,8 @@
 </main>
 
 <div class="stripes stripes-flip"><i></i><i></i><i></i></div>
+
+<script src="menu.js"></script>
 
 </body>
 </html>
