@@ -12,8 +12,6 @@
     if (voile) voile.classList.add('ouvert');
     bouton.setAttribute('aria-expanded', 'true');
     document.body.classList.add("menu-ouvert");       // décale le contenu vers la droite
-    var premier = tiroir.querySelector('a');
-    if (premier) premier.focus();
   }
 
   function fermer() {
@@ -36,8 +34,12 @@
     if (e.key === 'Escape' && tiroir.classList.contains('ouvert')) fermer();
   });
 
+  // le bouton de fermeture, qui reprend la place du bouton d'ouverture
+  var croix = tiroir.querySelector('.drawer-fermer');
+  if (croix) croix.addEventListener('click', fermer);
+
   // un clic sur un lien du menu le referme
-  tiroir.querySelectorAll('a').forEach(function (a) {
+  tiroir.querySelectorAll('nav a').forEach(function (a) {
     a.addEventListener('click', function () { tiroir.classList.remove('ouvert'); });
   });
 })();

@@ -269,48 +269,47 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 
 
 /* ============================================================
-   EN-TÊTE COLLANT
-   Le bandeau tricolore et la barre forment un seul bloc qui reste
-   au-dessus du tiroir : le logo ne bouge donc jamais.
+   EN-TÊTE
    ============================================================ */
-:root{--entete-h:101px;--drawer-l:300px}
+:root{--drawer-l:300px}
 
-.entete{position:sticky;top:0;z-index:90;background:var(--creme)}
+.entete{position:sticky;top:0;z-index:60;background:var(--creme)}
 
 .nav{background:var(--creme);border-bottom:2px solid var(--navy)}
 .nav-inner{
   max-width:var(--max);margin:0 auto;padding:0 var(--gutter);
   height:80px;display:flex;align-items:center;gap:14px;
 }
-.logo{display:flex;align-items:center}
-.logo img{height:54px;width:auto}
 
-/* le bouton à trois barres, juste après le logo */
+/* le bouton à trois barres, tout à gauche */
 .burger{
   display:flex;flex-direction:column;justify-content:center;gap:5px;
-  width:44px;height:44px;flex:none;padding:10px;margin-right:auto;
+  width:44px;height:44px;flex:none;padding:10px;
   background:transparent;border:2px solid var(--navy);cursor:pointer;
 }
 .burger i{display:block;height:2px;background:var(--navy)}
 .burger:hover{background:var(--navy)}
 .burger:hover i{background:var(--creme)}
 
+/* le logo juste à sa droite, les onglets repoussés au bout */
+.logo{display:flex;align-items:center;margin-right:auto}
+.logo img{height:54px;width:auto}
+
 .nav-links{display:none;gap:26px}
 .nav-links a{
   color:var(--navy);text-decoration:none;font-size:15px;font-weight:600;
   padding:4px 0;border-bottom:2px solid transparent;
 }
-.nav-links a:hover{border-bottom-color:var(--bordeaux)}
-.nav-links a.actif{border-bottom-color:var(--bordeaux)}
+.nav-links a:hover,.nav-links a.actif{border-bottom-color:var(--bordeaux)}
 @media(min-width:900px){.nav-links{display:flex}}
 
 /* ============================================================
    MENU LATÉRAL
+   Le tiroir recouvre le coin haut-gauche et rejoue exactement
+   la barre du haut : le bouton et le logo restent en place.
    ============================================================ */
-
-/* le tiroir démarre sous l'en-tête et va jusqu'en bas */
 .drawer{
-  position:fixed;top:var(--entete-h);left:0;bottom:0;z-index:80;
+  position:fixed;top:0;left:0;bottom:0;z-index:80;
   width:var(--drawer-l);max-width:86vw;
   background:var(--navy);color:var(--creme);
   transform:translateX(-100%);transition:transform .22s ease;
@@ -319,9 +318,23 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .drawer.ouvert{transform:translateX(0)}
 .drawer > .stripes:last-child{margin-top:auto}
 
-/* couche transparente qui referme le menu au clic à côté */
-.drawer-voile{position:fixed;inset:0;z-index:70;display:none;background:transparent;border:none}
-.drawer-voile.ouvert{display:block}
+/* la tête du tiroir reprend la barre du haut, aux mêmes mesures */
+.drawer-tete{
+  height:80px;flex:none;display:flex;align-items:center;gap:14px;
+  padding:0 var(--gutter);
+  background:var(--creme);border-bottom:2px solid var(--navy);
+}
+.drawer-fermer{
+  display:flex;flex-direction:column;justify-content:center;gap:5px;
+  width:44px;height:44px;flex:none;padding:10px;
+  background:var(--navy);border:2px solid var(--navy);cursor:pointer;
+}
+.drawer-fermer i{display:block;height:2px;background:var(--creme)}
+.drawer-fermer:hover{background:transparent}
+.drawer-fermer:hover i{background:var(--navy)}
+
+.drawer-logo{display:flex;align-items:center}
+.drawer-logo img{height:54px;width:auto}
 
 .drawer nav{display:flex;flex-direction:column;padding:16px 0}
 .drawer nav a{
@@ -334,21 +347,29 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .drawer-separateur{height:2px;background:var(--gold);margin:10px 22px}
 .drawer .btn{margin:8px 22px 26px}
 
-.burger:focus-visible,.drawer nav a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.burger:focus-visible,.drawer-fermer:focus-visible,.drawer nav a:focus-visible{
+  outline:3px solid var(--gold);outline-offset:3px;
+}
 
 /* ============================================================
-   MENU OUVERT : le contenu se décale au lieu d'être recouvert
+   MENU OUVERT : le contenu se décale, il reste lisible et cliquable
    ============================================================ */
-body > header,body > section{transition:margin-left .22s ease}
+.entete,body > header,body > section{transition:margin-left .22s ease}
+
+.drawer-voile{position:fixed;inset:0;z-index:70;display:none;background:transparent;border:none}
 
 @media(min-width:900px){
+  body.menu-ouvert .entete,
   body.menu-ouvert > header,
   body.menu-ouvert > section{margin-left:var(--drawer-l)}
-  /* sur grand écran le tiroir ne masque rien : pas besoin du voile */
-  body.menu-ouvert .drawer-voile{display:none}
+}
+
+/* sous 900 px il n'y a pas la place de décaler : le tiroir se superpose
+   et un clic à côté le referme */
+@media(max-width:899px){
+  .drawer-voile.ouvert{display:block}
 }
 
 @media (prefers-reduced-motion:reduce){
-  .drawer{transition:none}
-  body > header,body > section{transition:none}
+  .drawer,.entete,body > header,body > section{transition:none}
 }
