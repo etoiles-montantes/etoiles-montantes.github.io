@@ -11,8 +11,7 @@
     tiroir.classList.add('ouvert');
     if (voile) voile.classList.add('ouvert');
     bouton.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';          // bloque le défilement derrière
-    document.body.classList.add('menu-ouvert');       // masque le logo de la barre du haut
+    document.body.classList.add("menu-ouvert");       // décale le contenu vers la droite
     var premier = tiroir.querySelector('a');
     if (premier) premier.focus();
   }
@@ -21,7 +20,6 @@
     tiroir.classList.remove('ouvert');
     if (voile) voile.classList.remove('ouvert');
     bouton.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
     document.body.classList.remove('menu-ouvert');
     bouton.focus();
   }
@@ -38,7 +36,8 @@
     if (e.key === 'Escape' && tiroir.classList.contains('ouvert')) fermer();
   });
 
-  // le bouton de fermeture à l'intérieur du tiroir
-  var croix = tiroir.querySelector('.drawer-fermer');
-  if (croix) croix.addEventListener('click', fermer);
+  // un clic sur un lien du menu le referme
+  tiroir.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { tiroir.classList.remove('ouvert'); });
+  });
 })();
