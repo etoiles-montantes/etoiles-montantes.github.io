@@ -29,23 +29,6 @@
   bouton.addEventListener('click', basculer);
   if (voile) voile.addEventListener('click', fermer);
 
-  // Le tiroir s'arrête au-dessus de la bande tricolore du bas :
-  // quand on atteint le pied de page, elle occupe toute la largeur.
-  var bande = document.querySelector('body > .stripes.stripes-flip');
-
-  function caler() {
-    if (!bande) return;
-    var haut = bande.getBoundingClientRect().top;
-    var visible = Math.max(0, window.innerHeight - haut);
-    tiroir.style.bottom = visible + 'px';
-  }
-
-  if (bande) {
-    caler();
-    window.addEventListener('scroll', caler, { passive: true });
-    window.addEventListener('resize', caler);
-  }
-
   // la touche Échap referme le menu
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && tiroir.classList.contains('ouvert')) fermer();

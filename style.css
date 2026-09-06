@@ -25,7 +25,7 @@ body{
   font-family:var(--font-body);
   font-size:17px;line-height:1.65;
   color:var(--navy);
-  background:var(--creme);
+  background:var(--creme);padding-bottom:var(--bande-h);
   -webkit-font-smoothing:antialiased;
 }
 
@@ -50,6 +50,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .stripes i:nth-child(2){background:var(--bordeaux)}
 .stripes i:nth-child(3){background:var(--gold)}
 
+/* la bande du bas reste visible en permanence, par-dessus le tiroir */
+.stripes-flip{position:fixed;left:0;right:0;bottom:0;z-index:95}
 .stripes-flip i:nth-child(1){background:var(--gold)}
 .stripes-flip i:nth-child(3){background:var(--navy)}
 
@@ -271,7 +273,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 /* ============================================================
    EN-TÊTE
    ============================================================ */
-:root{--drawer-l:300px;--entete-h:103px}  /* 21 px de bandeau + 80 px de barre + 2 px de filet */
+:root{--drawer-l:300px;--entete-h:103px;--bande-h:21px}  /* 21 px de bandeau + 80 px de barre + 2 px de filet */
 
 .entete{position:sticky;top:0;z-index:60;background:var(--creme)}
 
@@ -309,7 +311,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
    ============================================================ */
 /* le tiroir démarre sous le filet de l'en-tête, qui reste visible */
 .drawer{
-  position:fixed;top:calc(var(--entete-h) - 2px);left:0;bottom:0;z-index:80;
+  position:fixed;top:calc(var(--entete-h) - 2px);left:0;bottom:var(--bande-h);z-index:80;
   width:var(--drawer-l);max-width:86vw;
   background:var(--navy);color:var(--creme);
   transform:translateX(-100%);transition:transform .22s ease;
@@ -337,7 +339,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
    ============================================================ */
 body > header,body > section{transition:margin-left .22s ease}
 
-.drawer-voile{position:fixed;top:calc(var(--entete-h) - 2px);left:0;right:0;bottom:0;z-index:70;display:none;background:transparent;border:none}
+.drawer-voile{position:fixed;top:calc(var(--entete-h) - 2px);left:0;right:0;bottom:var(--bande-h);z-index:70;display:none;background:transparent;border:none}
 
 @media(min-width:900px){
   body.menu-ouvert > header,
