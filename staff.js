@@ -1,6 +1,6 @@
 // Page Staff — un profil à la fois.
-// Navigation : les deux petits ronds, les points de repère,
-// les flèches du clavier, et le glissement du doigt sur téléphone.
+// Navigation : les deux ronds voisins, les flèches du clavier,
+// et le glissement du doigt sur téléphone.
 
 (function () {
   var zone = document.querySelector('.staff');
@@ -8,14 +8,13 @@
 
   var profils = Array.prototype.slice.call(zone.querySelectorAll('.coach'));
   var cotes   = Array.prototype.slice.call(zone.querySelectorAll('.staff-cote'));
-  var points  = zone.querySelector('.staff-points');
   if (profils.length < 2) return;
 
   var courant = 0;
 
-  // récupère l'image et le nom d'un profil donné
+  // image, état et nom d'un profil donné
   function infos(i) {
-    var p = profils[i];
+    var p   = profils[i];
     var img = p.querySelector('.coach-photo img');
     var nom = p.querySelector('h3');
     return {
@@ -32,22 +31,16 @@
       p.classList.toggle('actif', n === courant);
     });
 
-    // les petits ronds prennent la photo du voisin correspondant
+    // chaque petit rond prend la photo et le nom de son voisin
     cotes.forEach(function (c) {
       var pas = parseInt(c.dataset.dir, 10);
       var v   = infos((courant + pas + profils.length) % profils.length);
       var vue = c.querySelector('.staff-cote-img');
       vue.style.backgroundImage = v.src ? 'url("' + v.src + '")' : 'none';
       vue.classList.toggle('vide', v.vide);
+      c.querySelector('.staff-cote-nom').textContent = v.nom;
       c.setAttribute('aria-label', 'Voir ' + v.nom);
-      c.setAttribute('title', v.nom);
     });
-
-    if (points) {
-      points.querySelectorAll('button').forEach(function (b, n) {
-        b.setAttribute('aria-current', n === courant ? 'true' : 'false');
-      });
-    }
   }
 
   cotes.forEach(function (c) {
@@ -55,16 +48,6 @@
       afficher(courant + parseInt(c.dataset.dir, 10));
     });
   });
-
-  // un point de repère par profil, construit automatiquement
-  if (points) {
-    profils.forEach(function (p, n) {
-      var b = document.createElement('button');
-      b.setAttribute('aria-label', 'Voir ' + infos(n).nom);
-      b.addEventListener('click', function () { afficher(n); });
-      points.appendChild(b);
-    });
-  }
 
   // flèches gauche et droite du clavier
   document.addEventListener('keydown', function (e) {

@@ -365,18 +365,30 @@ body > header,body > section{transition:margin-left .22s ease}
 /* les deux petits ronds, calés sur le centre du grand */
 .staff-cote{
   position:absolute;top:calc(var(--rond) / 2 - var(--cote) / 2);
-  width:var(--cote);height:var(--cote);padding:0;
-  border-radius:50%;overflow:hidden;cursor:pointer;
-  background:var(--creme);border:2px solid var(--navy);
-  opacity:.65;transition:opacity .18s ease,transform .18s ease;
+  width:calc(var(--cote) + 40px);padding:0;
+  display:flex;flex-direction:column;align-items:center;gap:9px;
+  background:transparent;border:none;cursor:pointer;
+  opacity:.7;transition:opacity .18s ease;
 }
-.staff-cote:hover{opacity:1;transform:scale(1.06)}
-.staff-cote[data-dir="-1"]{left:0}
-.staff-cote[data-dir="1"]{right:0}
+.staff-cote:hover{opacity:1}
+.staff-cote:hover .staff-cote-img{transform:scale(1.06)}
+.staff-cote[data-dir="-1"]{left:-20px}
+.staff-cote[data-dir="1"]{right:-20px}
 .staff-cote:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
-.staff-cote-img{display:block;width:100%;height:100%;background-size:cover;background-position:center}
+.staff-cote-img{
+  display:block;width:var(--cote);height:var(--cote);
+  border-radius:50%;overflow:hidden;
+  background:var(--creme);border:2px solid var(--navy);
+  background-size:cover;background-position:center;
+  transition:transform .18s ease;
+}
 .staff-cote-img.vide{background-size:62%;background-repeat:no-repeat;background-position:center}
+
+.staff-cote-nom{
+  font-size:clamp(11px,2.5vw,13px);font-weight:600;line-height:1.25;
+  color:var(--navy);text-transform:uppercase;letter-spacing:.02em;
+}
 
 /* un seul profil affiché à la fois */
 .coach{display:none}
@@ -401,13 +413,8 @@ body > header,body > section{transition:margin-left .22s ease}
 }
 .coach-texte{max-width:58ch;margin:0 auto;font-size:17px;color:var(--navy)}
 
-/* les points de repère sous le profil */
-.staff-points{display:flex;justify-content:center;gap:10px;margin-top:34px}
-.staff-points button{
   width:13px;height:13px;padding:0;border-radius:50%;cursor:pointer;
   background:transparent;border:2px solid var(--navy);
 }
-.staff-points button[aria-current="true"]{background:var(--bordeaux);border-color:var(--bordeaux)}
-.staff-points button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
-@media (prefers-reduced-motion:reduce){.staff-cote{transition:none}}
+@media (prefers-reduced-motion:reduce){.staff-cote,.staff-cote-img{transition:none}}
