@@ -406,10 +406,13 @@ body > header,body > section{transition:margin-left .22s ease}
   margin-bottom:10px;color:var(--navy);
 }
 .coach-role{
-  font-size:clamp(17px,2.6vw,21px);font-weight:600;
-  color:var(--bordeaux);margin-bottom:22px;
+  font-size:clamp(17px,2.6vw,21px);font-weight:600;line-height:1.35;
+  color:var(--bordeaux);margin:0 auto 22px;max-width:46ch;
 }
 .coach-texte{max-width:58ch;margin:0 auto;font-size:17px;color:var(--navy)}
+
+/* lien vers le site d'un partenaire */
+.coach-lien{margin-top:26px}
 
 
 @media (prefers-reduced-motion:reduce){.staff-cote,.staff-cote-img{transition:none}}
