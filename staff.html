@@ -62,15 +62,44 @@
       <i></i>
     </div>
     <h2>Staff</h2>
-    <p class="lead">L'équipe qui fait vivre le projet au quotidien. Page en cours de rédaction.</p>
+    <p class="lead">L'équipe qui fait vivre le projet au quotidien.</p>
 
-    <!-- ============================================================
-         CONTENU À COMPLÉTER
-         Ajoute ici tes paragraphes, tes cartes ou tes images.
-         Pour reprendre le modèle des cartes du site, copie un bloc
-         <article class="action"> depuis nos-actions.html.
-         ============================================================ -->
+    <div class="staff">
+      <button class="staff-fleche" data-dir="-1" aria-label="Profil précédent">&lsaquo;</button>
+      <button class="staff-fleche" data-dir="1" aria-label="Profil suivant">&rsaquo;</button>
 
+      <!-- ============================================================
+           UN PROFIL = UN BLOC <article class="coach">
+           Pour en ajouter un, copie un bloc entier et modifie le nom,
+           le rôle et le texte. Pour la photo, remplace la ligne
+           <div class="coach-photo"></div> par :
+           <div class="coach-photo"><img src="photo-untel.jpg" alt="Untel"></div>
+           et dépose la photo à côté des autres fichiers.
+           ============================================================ -->
+
+      <article class="coach actif">
+        <div class="coach-photo"></div>
+        <h3>Elie Fedensieu</h3>
+        <p class="coach-role">Président / Entraîneur</p>
+        <p class="coach-texte">Présentation en cours de rédaction.</p>
+      </article>
+
+      <article class="coach">
+        <div class="coach-photo"></div>
+        <h3>Alan Guyomarch</h3>
+        <p class="coach-role">Entraîneur / Préparateur mental</p>
+        <p class="coach-texte">Présentation en cours de rédaction.</p>
+      </article>
+
+      <article class="coach">
+        <div class="coach-photo"></div>
+        <h3>Philippe Rioux</h3>
+        <p class="coach-role">Entraîneur / Préparateur physique</p>
+        <p class="coach-texte">Présentation en cours de rédaction.</p>
+      </article>
+
+      <div class="staff-points"></div>
+    </div>
   </div>
 </section>
 <section class="section section-navy" id="contact">
@@ -103,6 +132,7 @@
 <div class="stripes stripes-flip"><i></i><i></i><i></i></div>
 
 <script src="menu.js"></script>
+<script src="staff.js"></script>
 
 </body>
 </html>

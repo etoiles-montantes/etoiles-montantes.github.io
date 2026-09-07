@@ -289,8 +289,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
   width:44px;height:44px;flex:none;padding:9px 4px;
   background:transparent;border:none;cursor:pointer;
 }
-.burger i{display:block;height:3px;background:var(--navy);transition:background .15s ease}
-.burger:hover i{background:var(--bordeaux)}
+.burger i{display:block;height:3px;background:var(--navy)}
 
 /* le logo juste à sa droite, les onglets repoussés au bout */
 .logo{display:flex;align-items:center;margin-right:auto}
@@ -354,4 +353,61 @@ body > header,body > section{transition:margin-left .22s ease}
 
 @media (prefers-reduced-motion:reduce){
   .drawer,body > header,body > section{transition:none}
+}
+
+/* ============================================================
+   PAGE STAFF — un profil à la fois, flèches pour naviguer
+   ============================================================ */
+:root{--rond:clamp(170px,42vw,250px)}
+
+.staff{position:relative;margin-top:44px;text-align:center}
+
+/* les flèches, calées sur le centre du rond */
+.staff-fleche{
+  position:absolute;top:calc(var(--rond) / 2 - 24px);
+  width:48px;height:48px;padding:0;
+  display:flex;align-items:center;justify-content:center;
+  background:transparent;border:2px solid var(--navy);color:var(--navy);
+  font-size:26px;line-height:1;cursor:pointer;
+}
+.staff-fleche:hover{background:var(--navy);color:var(--creme)}
+.staff-fleche[data-dir="-1"]{left:0}
+.staff-fleche[data-dir="1"]{right:0}
+.staff-fleche:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* un seul profil affiché à la fois */
+.coach{display:none;padding:0 62px}
+.coach.actif{display:block}
+
+.coach-photo{
+  width:var(--rond);height:var(--rond);margin:0 auto 30px;
+  border-radius:50%;background:var(--creme);
+  border:3px solid var(--navy);overflow:hidden;
+}
+.coach-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+.coach h3{
+  font-size:clamp(26px,5.4vw,42px);text-transform:uppercase;
+  margin-bottom:10px;color:var(--navy);
+}
+.coach-role{
+  font-size:clamp(17px,2.6vw,21px);font-weight:600;
+  color:var(--bordeaux);margin-bottom:22px;
+}
+.coach-texte{max-width:58ch;margin:0 auto;font-size:17px;color:var(--navy)}
+
+/* les points de repère sous le profil */
+.staff-points{display:flex;justify-content:center;gap:10px;margin-top:34px}
+.staff-points button{
+  width:13px;height:13px;padding:0;border-radius:50%;cursor:pointer;
+  background:transparent;border:2px solid var(--navy);
+}
+.staff-points button[aria-current="true"]{background:var(--bordeaux);border-color:var(--bordeaux)}
+.staff-points button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+@media(max-width:560px){
+  .coach{padding:0}
+  .staff-fleche{width:42px;height:42px;font-size:22px}
+  .staff-fleche[data-dir="-1"]{left:-6px}
+  .staff-fleche[data-dir="1"]{right:-6px}
 }
