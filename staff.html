@@ -65,34 +65,37 @@
     <p class="lead">L'équipe qui fait vivre le projet au quotidien.</p>
 
     <div class="staff">
-      <button class="staff-fleche" data-dir="-1" aria-label="Profil précédent">&lsaquo;</button>
-      <button class="staff-fleche" data-dir="1" aria-label="Profil suivant">&rsaquo;</button>
+
+      <!-- les deux petits ronds : profil précédent et suivant.
+           Leur image est reprise automatiquement par le script. -->
+      <button class="staff-cote" data-dir="-1"><span class="staff-cote-img"></span></button>
+      <button class="staff-cote" data-dir="1"><span class="staff-cote-img"></span></button>
 
       <!-- ============================================================
            UN PROFIL = UN BLOC <article class="coach">
            Pour en ajouter un, copie un bloc entier et modifie le nom,
-           le rôle et le texte. Pour la photo, remplace la ligne
-           <div class="coach-photo"></div> par :
-           <div class="coach-photo"><img src="photo-untel.jpg" alt="Untel"></div>
-           et dépose la photo à côté des autres fichiers.
+           le rôle et le texte.
+           POUR METTRE UNE VRAIE PHOTO : remplace embleme-embt.png par
+           le nom de ton fichier ET retire le mot vide de class="coach-photo vide".
+           Une photo carrée donne le meilleur résultat.
            ============================================================ -->
 
       <article class="coach actif">
-        <div class="coach-photo"></div>
+        <div class="coach-photo vide"><img src="embleme-embt.png" alt="Elie Fedensieu"></div>
         <h3>Elie Fedensieu</h3>
         <p class="coach-role">Président / Entraîneur</p>
         <p class="coach-texte">Présentation en cours de rédaction.</p>
       </article>
 
       <article class="coach">
-        <div class="coach-photo"></div>
+        <div class="coach-photo vide"><img src="embleme-embt.png" alt="Alan Guyomarch"></div>
         <h3>Alan Guyomarch</h3>
         <p class="coach-role">Entraîneur / Préparateur mental</p>
         <p class="coach-texte">Présentation en cours de rédaction.</p>
       </article>
 
       <article class="coach">
-        <div class="coach-photo"></div>
+        <div class="coach-photo vide"><img src="embleme-embt.png" alt="Philippe Rioux"></div>
         <h3>Philippe Rioux</h3>
         <p class="coach-role">Entraîneur / Préparateur physique</p>
         <p class="coach-texte">Présentation en cours de rédaction.</p>

@@ -356,27 +356,30 @@ body > header,body > section{transition:margin-left .22s ease}
 }
 
 /* ============================================================
-   PAGE STAFF — un profil à la fois, flèches pour naviguer
+   PAGE STAFF — un profil à la fois, les voisins en petit de chaque côté
    ============================================================ */
-:root{--rond:clamp(170px,42vw,250px)}
+:root{--rond:clamp(170px,40vw,250px);--cote:clamp(58px,15vw,96px)}
 
 .staff{position:relative;margin-top:44px;text-align:center}
 
-/* les flèches, calées sur le centre du rond */
-.staff-fleche{
-  position:absolute;top:calc(var(--rond) / 2 - 24px);
-  width:48px;height:48px;padding:0;
-  display:flex;align-items:center;justify-content:center;
-  background:transparent;border:2px solid var(--navy);color:var(--navy);
-  font-size:26px;line-height:1;cursor:pointer;
+/* les deux petits ronds, calés sur le centre du grand */
+.staff-cote{
+  position:absolute;top:calc(var(--rond) / 2 - var(--cote) / 2);
+  width:var(--cote);height:var(--cote);padding:0;
+  border-radius:50%;overflow:hidden;cursor:pointer;
+  background:var(--creme);border:2px solid var(--navy);
+  opacity:.65;transition:opacity .18s ease,transform .18s ease;
 }
-.staff-fleche:hover{background:var(--navy);color:var(--creme)}
-.staff-fleche[data-dir="-1"]{left:0}
-.staff-fleche[data-dir="1"]{right:0}
-.staff-fleche:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.staff-cote:hover{opacity:1;transform:scale(1.06)}
+.staff-cote[data-dir="-1"]{left:0}
+.staff-cote[data-dir="1"]{right:0}
+.staff-cote:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+.staff-cote-img{display:block;width:100%;height:100%;background-size:cover;background-position:center}
+.staff-cote-img.vide{background-size:62%;background-repeat:no-repeat;background-position:center}
 
 /* un seul profil affiché à la fois */
-.coach{display:none;padding:0 62px}
+.coach{display:none}
 .coach.actif{display:block}
 
 .coach-photo{
@@ -385,6 +388,8 @@ body > header,body > section{transition:margin-left .22s ease}
   border:3px solid var(--navy);overflow:hidden;
 }
 .coach-photo img{width:100%;height:100%;object-fit:cover;display:block}
+/* en attendant une vraie photo : l'emblème, entier et centré */
+.coach-photo.vide img{object-fit:contain;padding:16%}
 
 .coach h3{
   font-size:clamp(26px,5.4vw,42px);text-transform:uppercase;
@@ -405,9 +410,4 @@ body > header,body > section{transition:margin-left .22s ease}
 .staff-points button[aria-current="true"]{background:var(--bordeaux);border-color:var(--bordeaux)}
 .staff-points button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
-@media(max-width:560px){
-  .coach{padding:0}
-  .staff-fleche{width:42px;height:42px;font-size:22px}
-  .staff-fleche[data-dir="-1"]{left:-6px}
-  .staff-fleche[data-dir="1"]{right:-6px}
-}
+@media (prefers-reduced-motion:reduce){.staff-cote{transition:none}}
