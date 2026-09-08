@@ -298,7 +298,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 /* trois marges au choix selon la forme du logo :
    serre pour les très allongés, moyen pour ceux qui débordent un peu */
 .bp-item img.serre{padding:5%}
-.bp-item img.moyen{padding:12%}
+.bp-item img.moyen{padding:9%}
 .bp-item:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
 /* le défilement : la piste contient deux fois la même série,
