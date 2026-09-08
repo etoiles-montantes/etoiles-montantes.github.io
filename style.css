@@ -286,16 +286,15 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 }
 .bp-piste{display:flex;align-items:center;gap:var(--bp-gap);width:max-content}
 
-/* pas de rond : le logo seul, contenu dans une case de taille fixe */
+/* chaque logo dans son rond crème cerné de marine */
 .bp-item{
   display:flex;align-items:center;justify-content:center;flex:none;
-  width:var(--bp-rond);height:var(--bp-rond);
-  background:none;border:none;
+  width:var(--bp-rond);height:var(--bp-rond);border-radius:50%;overflow:hidden;
+  background:var(--creme);border:2px solid var(--navy);
 }
-/* pour les logos très larges, une case plus longue */
-.bp-item.large{width:calc(var(--bp-rond) * 2.4)}
-
-.bp-item img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.bp-item img{width:100%;height:100%;object-fit:contain;padding:16%}
+/* la classe plein remplit le rond au lieu de contenir le logo entier */
+.bp-item img.plein{object-fit:cover;padding:0}
 .bp-item:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
 /* le défilement : la piste contient deux fois la même série,
