@@ -57,7 +57,7 @@
   var origine = Array.prototype.slice.call(piste.children);
   if (!origine.length) return;
 
-  var MINIMUM = 7;                       // nombre de ronds visés avant la boucle
+  var MINIMUM = 9;                       // au moins un de plus que les 8 visibles
 
   function monter() {
     piste.innerHTML = '';
