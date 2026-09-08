@@ -295,6 +295,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .bp-item img{width:100%;height:100%;object-fit:contain;padding:16%}
 /* la classe plein remplit le rond au lieu de contenir le logo entier */
 .bp-item img.plein{object-fit:cover;padding:0}
+/* la classe serre réduit la marge : pour les logos larges ou fins,
+   qui paraissent minuscules avec la marge courante */
+.bp-item img.serre{padding:5%}
 .bp-item:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
 /* le défilement : la piste contient deux fois la même série,
