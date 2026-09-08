@@ -435,6 +435,12 @@ body > header,body > section{transition:margin-left .22s ease}
 /* ============================================================
    FICHE D'UN PARTENAIRE
    ============================================================ */
+/* Sur les fiches, le filigrane est calé à distance fixe du haut plutôt
+   qu'au milieu : les noms et les activités n'ayant pas la même longueur,
+   les sections n'ont pas la même hauteur et il se retrouvait décalé
+   d'une fiche à l'autre, surtout sur téléphone. */
+#partenaire .ghost-soft{top:60px;transform:none}
+
 .fiche{margin-top:40px;text-align:center}
 .fiche .coach-photo{margin:0 auto 30px}
 /* les blocs de texte sont bornés en largeur : sans marges automatiques
