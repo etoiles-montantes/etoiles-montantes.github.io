@@ -43,3 +43,39 @@
     a.addEventListener('click', function () { tiroir.classList.remove('ouvert'); });
   });
 })();
+
+// ------------------------------------------------------------
+// Défilement des partenaires dans la barre du haut.
+// La liste écrite dans le HTML est recopiée autant de fois que
+// nécessaire pour remplir le bandeau, puis dupliquée une dernière
+// fois : le décalage de la moitié donne une boucle sans coupure.
+// ------------------------------------------------------------
+(function () {
+  var piste = document.querySelector('.bp-piste');
+  if (!piste) return;
+
+  var origine = Array.prototype.slice.call(piste.children);
+  if (!origine.length) return;
+
+  var MINIMUM = 7;                       // nombre de ronds visés avant la boucle
+
+  function monter() {
+    piste.innerHTML = '';
+    var serie = [];
+
+    // on répète la liste jusqu'à atteindre le nombre voulu
+    while (serie.length < MINIMUM) {
+      origine.forEach(function (el) { serie.push(el.cloneNode(true)); });
+    }
+
+    // la série est écrite deux fois : c'est ce qui rend la boucle invisible
+    serie.forEach(function (el) { piste.appendChild(el); });
+    serie.forEach(function (el) { piste.appendChild(el.cloneNode(true)); });
+
+    // vitesse constante quel que soit le nombre de logos
+    piste.style.setProperty('--bp-duree', (serie.length * 4.5) + 's');
+    piste.classList.add('anime');
+  }
+
+  monter();
+})();
