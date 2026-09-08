@@ -272,6 +272,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 
 /* le logo juste à sa droite du bouton */
 .logo{display:flex;align-items:center;flex:none}
+.logo img{height:54px;width:auto}
 
 /* ------------------------------------------------------------
    DÉFILEMENT DES PARTENAIRES DANS LA BARRE DU HAUT
@@ -305,7 +306,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 
 @media(min-width:900px){.bandeau-partenaires{display:block}}
 @media (prefers-reduced-motion:reduce){.bp-piste.anime{animation:none}}
-.logo img{height:54px;width:auto}
 
 
 /* ============================================================
