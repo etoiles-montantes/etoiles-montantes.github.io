@@ -441,6 +441,12 @@ body > header,body > section{transition:margin-left .22s ease}
    d'une fiche à l'autre, surtout sur téléphone. */
 #partenaire .ghost-soft{top:60px;transform:none}
 
+/* Même chose sur les deux pages à défilement : d'un profil à l'autre les
+   textes n'ont pas la même longueur, la section change donc de hauteur
+   et un filigrane centré sauterait à chaque changement. */
+#partenaires .ghost-soft,
+#staff .ghost-soft{top:60px;transform:none}
+
 .fiche{margin-top:40px;text-align:center}
 .fiche .coach-photo{margin:0 auto 30px}
 /* les blocs de texte sont bornés en largeur : sans marges automatiques
