@@ -412,6 +412,8 @@ body > header,body > section{transition:margin-left .22s ease}
 .coach-photo.vide img{object-fit:contain;padding:16%}
 /* logo très large : on réduit la marge pour qu'il reste lisible */
 .coach-photo.large img{padding:6%}
+/* logo qui remplit mal son carré : même traitement que dans le bandeau */
+.coach-photo.serre img{padding:7%}
 
 .coach h3{
   font-size:clamp(26px,5.4vw,42px);text-transform:uppercase;
