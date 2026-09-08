@@ -277,16 +277,18 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 /* ------------------------------------------------------------
    DÉFILEMENT DES PARTENAIRES DANS LA BARRE DU HAUT
    ------------------------------------------------------------ */
+/* largeur calée sur exactement six ronds, collée à droite */
 .bandeau-partenaires{
   display:none;                 /* affiché à partir de 900 px, voir plus bas */
-  flex:1;min-width:0;margin-left:24px;
-  overflow:hidden;
+  --bp-rond:48px;--bp-gap:14px;
+  flex:none;margin-left:auto;overflow:hidden;
+  width:calc(6 * var(--bp-rond) + 5 * var(--bp-gap));
 }
-.bp-piste{display:flex;align-items:center;gap:16px;width:max-content}
+.bp-piste{display:flex;align-items:center;gap:var(--bp-gap);width:max-content}
 
 .bp-item{
   display:flex;align-items:center;justify-content:center;flex:none;
-  width:52px;height:52px;border-radius:50%;overflow:hidden;
+  width:var(--bp-rond);height:var(--bp-rond);border-radius:50%;overflow:hidden;
   background:var(--creme);border:2px solid var(--navy);
   opacity:.82;transition:opacity .18s ease;
 }
