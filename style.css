@@ -286,15 +286,16 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 }
 .bp-piste{display:flex;align-items:center;gap:var(--bp-gap);width:max-content}
 
+/* pas de rond : le logo seul, contenu dans une case de taille fixe */
 .bp-item{
   display:flex;align-items:center;justify-content:center;flex:none;
-  width:var(--bp-rond);height:var(--bp-rond);border-radius:50%;overflow:hidden;
-  background:var(--creme);border:2px solid var(--navy);
-  opacity:.82;transition:opacity .18s ease;
+  width:var(--bp-rond);height:var(--bp-rond);
+  background:none;border:none;
 }
-.bp-item:hover{opacity:1}
-.bp-item img{width:100%;height:100%;object-fit:contain;padding:16%}
-.bp-item img.plein{object-fit:cover;padding:0}
+/* pour les logos très larges, une case plus longue */
+.bp-item.large{width:calc(var(--bp-rond) * 2.4)}
+
+.bp-item img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
 .bp-item:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
 /* le défilement : la piste contient deux fois la même série,
@@ -425,3 +426,14 @@ body > header,body > section{transition:margin-left .22s ease}
 
 
 @media (prefers-reduced-motion:reduce){.staff-cote,.staff-cote-img{transition:none}}
+
+/* ============================================================
+   FICHE D'UN PARTENAIRE
+   ============================================================ */
+.fiche{margin-top:40px;text-align:center}
+.fiche .coach-photo{margin:0 auto 30px}
+.fiche h2{margin-bottom:10px}
+.fiche .coach-role{margin-bottom:30px}
+.fiche-texte{max-width:62ch;margin:0 auto 18px;font-size:17px;color:var(--navy);text-align:left}
+.fiche-retour{margin-top:40px;font-size:16px}
+.fiche-retour a{color:var(--bordeaux);text-decoration:underline;text-underline-offset:3px}
