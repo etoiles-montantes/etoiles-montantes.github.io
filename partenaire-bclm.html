@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BCLM — Partenaire de l'EMBT</title>
+<meta name="description" content="BCLM, club de basketball, partenaire de l'EMBT à Toulouse.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="entete">
+  <div class="stripes"><i></i><i></i><i></i></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-lateral">
+        <i></i><i></i><i></i>
+      </button>
+      <a href="index.html" class="logo">
+        <img src="logo-embt.png" alt="EMBT — Étoiles Montantes du Basket Toulousain">
+      </a>
+      <!-- ============================================================
+           DÉFILEMENT DES PARTENAIRES
+           Un bloc <a class="bp-item"> par partenaire. Le script duplique
+           la liste autant de fois qu'il faut pour remplir le bandeau,
+           inutile d'en écrire plusieurs fois.
+           La classe large donne une case plus longue aux logos très allongés.
+           ============================================================ -->
+      <div class="bandeau-partenaires" aria-label="Nos partenaires">
+        <div class="bp-piste">
+          <a class="bp-item" href="partenaire-tbc.html" title="Toulouse Basketball Club"><img src="bp-tbc.png" alt="Toulouse Basketball Club"></a>
+          <a class="bp-item large" href="partenaire-badin.html" title="Badin Conseil"><img src="bp-badin.png" alt="Badin Conseil"></a>
+          <a class="bp-item" href="partenaire-rioux.html" title="Rioux Technology"><img src="bp-entreprise.png" alt="Rioux Technology"></a>
+          <a class="bp-item" href="partenaire-bclm.html" title="BCLM"><img src="bp-bclm.png" alt="BCLM"></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<button class="drawer-voile" aria-label="Fermer le menu"></button>
+
+<aside class="drawer" id="menu-lateral" aria-label="Menu principal">
+
+  <nav>
+    <a href="projet-elite.html">Projet Élite</a>
+    <a href="nos-actions.html">Nos actions</a>
+    <a href="maevasoa.html">Maevasoa Basketball</a>
+    <a href="nous-soutenir.html">Nous soutenir</a>
+    <div class="drawer-separateur"></div>
+    <a href="staff.html">Staff</a>
+    <a href="partenaires.html" class='actif'>Partenaires</a>
+  </nav>
+
+</aside>
+
+<section class="section section-creme" id="partenaire">
+  <img class="ghost-soft" src="embleme-filigrane.png" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <polygon points="12.0,1.0 14.7,8.3 22.5,8.6 16.4,13.4 18.5,20.9 12.0,16.6 5.5,20.9 7.6,13.4 1.5,8.6 9.3,8.3" fill="#961421"/>
+      </svg>
+      <i></i>
+    </div>
+
+    <div class="fiche">
+      <div class="coach-photo vide"><img src="logo-bclm.png" alt="BCLM"></div>
+      <h2>BCLM</h2>
+      <p class="coach-role">Club de basketball</p>
+
+      <!-- ============================================================
+           LA PRÉSENTATION S'ÉCRIT ICI.
+           Ajoute autant de paragraphes que tu veux, chacun entre
+           <p class="fiche-texte"> et </p>.
+           Pour le lien vers leur site, retire les deux lignes de
+           commentaire ci-dessous et remplace l'adresse.
+           ============================================================ -->
+      <p class="fiche-texte">Présentation en cours de rédaction.</p>
+
+      <!--
+      <a href="https://exemple.fr" class="btn btn-red coach-lien" target="_blank" rel="noopener">Visiter le site</a>
+      -->
+
+      <p class="fiche-retour"><a href="partenaires.html">Retour à tous les partenaires</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-navy" id="contact">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <polygon points="12.0,1.0 14.7,8.3 22.5,8.6 16.4,13.4 18.5,20.9 12.0,16.6 5.5,20.9 7.6,13.4 1.5,8.6 9.3,8.3" fill="#C59216"/>
+      </svg>
+      <i></i>
+    </div>
+    <h2>Contact</h2>
+
+    <div class="contact-grid">
+      <div>
+        <h3>Nous écrire</h3>
+        <p><a href="mailto:contact.embt31@gmail.com">contact.embt31@gmail.com</a></p>
+        <p style="margin-top:8px;color:rgba(243,242,237,.7)">Inscriptions, partenariats, dons de matériel.</p>
+      </div>
+      <div>
+        <h3>L'association</h3>
+        <p style="color:rgba(243,242,237,.8)">
+          EMBT — Étoiles Montantes du Basket Toulousain<br>
+          Association loi 1901 — Toulouse
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripes stripes-flip"><i></i><i></i><i></i></div>
+
+<script src="menu.js"></script>
+
+</body>
+</html>
