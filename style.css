@@ -108,15 +108,14 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .section-navy{background:var(--navy);color:var(--creme)}
 
 .section .wrap{position:relative;z-index:2}
-.section h2{font-size:clamp(28px,5.5vw,44px);text-transform:uppercase;max-width:20ch}
+.section h1,.section h2{font-size:clamp(28px,5.5vw,44px);text-transform:uppercase;max-width:20ch;font-weight:400}
 .section-navy h2{color:var(--creme)}
 
 /* sur fond marine, les cartes se cernent de crème */
 .section-navy .action,
 .section-navy .event,
 .section-navy .support-item,
-.section-navy .share{border-color:var(--creme)}
-.lead{margin-top:20px;max-width:60ch;font-size:19px}
+.section-navy .lead{margin-top:20px;max-width:60ch;font-size:19px}
 
 /* sur fond clair, on inverse les traits clairs en traits sombres */
 .ghost-soft{opacity:.09;filter:invert(1)}
@@ -150,8 +149,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 /* sur fond marine, le texte des cartes repasse en marine */
 .section-navy .action,
 .section-navy .support-item,
-.section-navy .share{color:var(--navy)}
-
+.section-navy 
 /* ============================================================
    12. ÉVÉNEMENTS
    ============================================================ */
@@ -174,15 +172,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 /* ============================================================
    13. MAEVASOA
    ============================================================ */
-.maevasoa-title{color:var(--creme);font-family:var(--font-display);font-size:clamp(26px,5.4vw,46px);line-height:1.08;text-transform:uppercase}
-.split{display:grid;gap:34px;margin-top:34px}
-@media(min-width:860px){.split{grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}}
-
-.share{background:var(--creme);border:2px solid var(--navy);padding:28px 26px}
-.share-row{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px solid rgba(9,33,52,.18)}
-.share-row:last-child{border-bottom:none}
-.share-row b{font-family:var(--font-display);font-size:24px;color:var(--bordeaux)}
-.share-row span{font-size:15px;color:rgba(9,33,52,.8);max-width:22ch;text-align:right}
 
 /* ============================================================
    14. NOUS SOUTENIR
@@ -283,8 +272,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
   --bp-rond:56px;--bp-gap:14px;
   flex:none;margin-left:auto;overflow:hidden;
   width:calc(8 * var(--bp-rond) + 7 * var(--bp-gap));
+  height:var(--bp-rond);
 }
-.bp-piste{display:flex;align-items:center;gap:var(--bp-gap);width:max-content}
+.bp-piste{display:flex;align-items:center;height:100%;gap:var(--bp-gap);width:max-content}
 
 /* chaque logo dans son rond crème cerné de marine */
 .bp-item{
@@ -292,7 +282,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
   width:var(--bp-rond);height:var(--bp-rond);border-radius:50%;overflow:hidden;
   background:var(--creme);border:2px solid var(--navy);
 }
-.bp-item img{width:100%;height:100%;object-fit:contain;padding:16%}
+.bp-item img{width:100%;height:100%;object-fit:contain;object-position:center;padding:16%}
 /* la classe plein remplit le rond au lieu de contenir le logo entier */
 .bp-item img.plein{object-fit:cover;padding:0}
 /* trois marges au choix selon la forme du logo :
@@ -310,7 +300,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .bp-piste.anime{animation:bp-defile var(--bp-duree,34s) linear infinite}
 .bandeau-partenaires:hover .bp-piste.anime{animation-play-state:paused}
 
-@media(min-width:900px){.bandeau-partenaires{display:block}}
+@media(min-width:900px){.bandeau-partenaires{display:flex;align-items:center}}
 @media (prefers-reduced-motion:reduce){.bp-piste.anime{animation:none}}
 
 
@@ -451,7 +441,7 @@ body > header,body > section{transition:margin-left .22s ease}
 .fiche .coach-photo{margin:0 auto 30px}
 /* les blocs de texte sont bornés en largeur : sans marges automatiques
    ils resteraient collés à gauche malgré le centrage */
-.fiche h2{max-width:22ch;margin:0 auto 12px}
+.fiche h1{max-width:22ch;margin:0 auto 12px}
 .fiche .coach-role{max-width:46ch;margin:0 auto 32px}
 .fiche-texte{max-width:62ch;margin:0 auto 18px;font-size:17px;color:var(--navy)}
 .fiche-retour{margin-top:40px;font-size:16px}
