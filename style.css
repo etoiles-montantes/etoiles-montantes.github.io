@@ -282,13 +282,15 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
   width:var(--bp-rond);height:var(--bp-rond);border-radius:50%;overflow:hidden;
   background:var(--creme);border:2px solid var(--navy);
 }
-.bp-item img{width:100%;height:100%;object-fit:contain;object-position:center;padding:16%}
-/* la classe plein remplit le rond au lieu de contenir le logo entier */
-.bp-item img.plein{object-fit:cover;padding:0}
-/* trois marges au choix selon la forme du logo :
-   serre pour les très allongés, moyen pour ceux qui débordent un peu */
-.bp-item img.serre{padding:5%}
-.bp-item img.moyen{padding:9%}
+/* Le logo est dimensionné directement plutôt que par une marge intérieure :
+   la marge se combinait au calcul des bordures et décalait l'image dans
+   le rond. Ici c'est le centrage du conteneur qui place l'image, sans calcul. */
+.bp-item img{width:68%;height:68%;object-fit:contain;padding:0}
+/* trois tailles au choix selon la forme du logo */
+.bp-item img.moyen{width:82%;height:82%}
+.bp-item img.serre{width:90%;height:90%}
+/* plein remplit tout le rond */
+.bp-item img.plein{width:100%;height:100%;object-fit:cover}
 .bp-item:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
 /* le défilement : la piste contient deux fois la même série,
