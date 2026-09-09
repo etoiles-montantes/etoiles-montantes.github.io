@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rejoindre l'aventure — EMBT</title>
+<meta name="description" content="Déposez votre candidature pour rejoindre le projet Élite de l'EMBT.">
+
+
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://etoiles-montantes.github.io/nous-rejoindre-projet-elite.html">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="EMBT">
+<meta property="og:title" content="Rejoindre l'aventure — EMBT">
+<meta property="og:description" content="Déposez votre candidature pour rejoindre le projet Élite de l'EMBT.">
+<meta property="og:url" content="https://etoiles-montantes.github.io/nous-rejoindre-projet-elite.html">
+<meta property="og:image" content="https://etoiles-montantes.github.io/partage.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="entete">
+  <div class="stripes"><i></i><i></i><i></i></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-lateral">
+        <i></i><i></i><i></i>
+      </button>
+      <a href="index.html" class="logo">
+        <img src="logo-embt.png" alt="EMBT — Étoiles Montantes du Basket Toulousain">
+      </a>
+      <!-- ============================================================
+           DÉFILEMENT DES PARTENAIRES
+           Un bloc <a class="bp-item"> par partenaire. Le script duplique
+           la liste autant de fois qu'il faut pour remplir le bandeau,
+           inutile d'en écrire plusieurs fois.
+           La classe plein remplit le rond, sans elle le logo reste entier.
+           ============================================================ -->
+      <div class="bandeau-partenaires" aria-label="Nos partenaires">
+        <div class="bp-piste">
+          <a class="bp-item" href="partenaire-tbc.html" title="Toulouse Basketball Club"><img src="bp-tbc.png" alt="Toulouse Basketball Club" class="plein"></a>
+          <a class="bp-item" href="partenaire-badin.html" title="Badin Conseil"><img src="bp-badin.png" alt="Badin Conseil" class="serre"></a>
+          <a class="bp-item" href="partenaire-rioux.html" title="Rioux Technology"><img src="bp-entreprise.png" alt="Rioux Technology"></a>
+          <a class="bp-item" href="partenaire-bclm.html" title="BCLM"><img src="bp-bclm.png" alt="BCLM" class="moyen"></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<button class="drawer-voile" aria-label="Fermer le menu"></button>
+
+<aside class="drawer" id="menu-lateral" aria-label="Menu principal">
+
+  <nav>
+    <a href="projet-elite.html">Projet Élite</a>
+    <a href="nos-actions.html">Nos actions</a>
+    <a href="maevasoa-basketball.html">Maevasoa Basketball</a>
+    <a href="nous-soutenir.html">Nous soutenir</a>
+    <div class="drawer-separateur"></div>
+    <a href="staff.html">Staff</a>
+    <a href="partenaires.html">Partenaires</a>
+  </nav>
+
+</aside>
+
+<section class="section section-creme" id="inscription">
+  <img class="ghost-soft" src="embleme-filigrane.png" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <polygon points="12.0,1.0 14.7,8.3 22.5,8.6 16.4,13.4 18.5,20.9 12.0,16.6 5.5,20.9 7.6,13.4 1.5,8.6 9.3,8.3" fill="#C59216"/>
+      </svg>
+      <i></i>
+    </div>
+    <h1>Rejoindre le projet elite</h1>
+    <p class="lead">
+      Remplissez ce formulaire et nous revenons vers vous.<br> Les candidatures sont
+      étudiées au cas par cas, quel que soit le club d'origine.
+    </p>
+
+    <!-- ============================================================
+         OÙ ARRIVENT LES RÉPONSES
+         L'adresse après action="...formsubmit.co/" reçoit les mails.
+         Pour changer de destinataire, modifie-la ici.
+         ============================================================ -->
+    <form class="form" action="https://formsubmit.co/contact.embt31@gmail.com" method="POST">
+
+      <!-- réglages du service, invisibles pour le visiteur -->
+      <input type="hidden" name="_subject" value="Nouvelle candidature EMBT">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <!-- page affichée au visiteur après l'envoi : adresse complète obligatoire -->
+      <input type="hidden" name="_next" value="https://etoiles-montantes.github.io/merci.html">
+      <input type="text" name="_honey" class="trap" tabindex="-1" autocomplete="off">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="prenom">Prénom du joueur ou de la joueuse</label>
+          <input id="prenom" name="Prénom" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="nom">Nom</label>
+          <input id="nom" name="Nom" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="naissance">Date de naissance</label>
+          <input id="naissance" name="Date de naissance" type="date" required>
+        </div>
+
+        <div class="field">
+          <label for="poste">Poste</label>
+          <select id="poste" name="Poste">
+            <option value="">Choisir…</option>
+            <option>Meneur (1)</option>
+            <option>Arrière (2)</option>
+            <option>Ailier (3)</option>
+            <option>Intérieur (4)</option>
+            <option>Pivot (5)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="club">Club actuel</label>
+          <input id="club" name="Club actuel" type="text">
+          <p class="hint">Laissez vide si le joueur n'est licencié nulle part.</p>
+        </div>
+
+        <div class="field">
+          <label for="niveau">Niveau de compétition</label>
+          <select id="niveau" name="Niveau de compétition" required>
+            <option value="">Choisir…</option>
+            <option>Départemental</option>
+            <option>Régional</option>
+            <option>National (Élite)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="responsable">Nom du responsable légal</label>
+          <input id="responsable" name="Responsable légal" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="tel">Téléphone</label>
+          <input id="tel" name="Téléphone" type="tel" required>
+        </div>
+
+        <div class="field field-large">
+          <label for="email">Adresse mail</label>
+          <input id="email" name="Email" type="email" required>
+          <p class="hint">C'est à cette adresse que nous répondrons.</p>
+        </div>
+
+        <div class="field field-large">
+          <label for="message">Parlez-nous du joueur ou de la joueuse</label>
+          <textarea id="message" name="Message" placeholder="Mensurations, parcours, motivations, ambitions…"></textarea>
+        </div>
+
+        <div class="consent">
+          <input id="consent" name="Consentement" type="checkbox" value="Oui" required>
+          <label for="consent">
+            En tant que responsable légal, j'autorise l'EMBT à conserver ces informations
+            pour traiter la candidature et à me recontacter. Elles ne sont ni revendues ni
+            transmises à des tiers.
+          </label>
+        </div>
+
+        <div class="form-send">
+          <button type="submit" class="btn btn-red">Envoyer ma candidature</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</section>
+<section class="section section-navy" id="contact">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <polygon points="12.0,1.0 14.7,8.3 22.5,8.6 16.4,13.4 18.5,20.9 12.0,16.6 5.5,20.9 7.6,13.4 1.5,8.6 9.3,8.3" fill="#C59216"/>
+      </svg>
+      <i></i>
+    </div>
+    <h2>Contact</h2>
+
+    <div class="contact-grid">
+      <div>
+        <h3>Nous écrire</h3>
+        <p><a href="mailto:contact.embt31@gmail.com">contact.embt31@gmail.com</a></p>
+        <p style="margin-top:8px;color:rgba(243,242,237,.7)">Inscriptions, partenariats, dons de matériel.</p>
+      </div>
+      <div>
+        <h3>L'association</h3>
+        <p style="color:rgba(243,242,237,.8)">
+          EMBT — Étoiles Montantes du Basket Toulousain<br>
+          Association loi 1901 — Toulouse
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripes stripes-flip"><i></i><i></i><i></i></div>
+
+<script src="menu.js"></script>
+
+</body>
+</html>
