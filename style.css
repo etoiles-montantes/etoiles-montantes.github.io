@@ -254,10 +254,10 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 /* le bouton à trois barres, tout à gauche */
 .burger{
   display:flex;flex-direction:column;justify-content:center;gap:6px;
-  width:44px;height:44px;flex:none;padding:9px 4px;
+  width:44px;height:44px;flex:none;padding:0 4px;
   background:transparent;border:none;cursor:pointer;
 }
-.burger i{display:block;height:3px;background:var(--navy)}
+.burger i{display:block;height:4px;flex:none;background:var(--navy)}
 
 /* le logo juste à sa droite du bouton */
 .logo{display:flex;align-items:center;flex:none}
