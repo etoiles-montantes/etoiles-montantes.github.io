@@ -108,7 +108,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .section-navy{background:var(--navy);color:var(--creme)}
 
 .section .wrap{position:relative;z-index:2}
-.section h1,.section h2{font-size:clamp(28px,5.5vw,44px);text-transform:uppercase;max-width:20ch;font-weight:400}
+.section h1,.section h2{font-size:clamp(28px,5.5vw,44px);text-transform:uppercase;max-width:20ch;font-weight:400;margin-bottom:34px}
 .section-navy h2{color:var(--creme)}
 
 /* sur fond marine, les cartes se cernent de crème */
@@ -272,7 +272,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
   --bp-rond:56px;--bp-gap:14px;
   flex:none;margin-left:auto;overflow:hidden;
   width:calc(8 * var(--bp-rond) + 7 * var(--bp-gap));
-  height:var(--bp-rond);
+  /* un peu plus haut que les ronds : à hauteur égale, un arrondi de calcul
+     suffisait à rogner le bas des cercles */
+  height:calc(var(--bp-rond) + 12px);
 }
 .bp-piste{display:flex;align-items:center;height:100%;gap:var(--bp-gap);width:max-content}
 
