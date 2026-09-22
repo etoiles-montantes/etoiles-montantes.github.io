@@ -2,6 +2,6 @@ User-agent: *
 Allow: /
 
 # pages sans intérêt pour les moteurs
-Disallow: /merci.html
+Disallow: /merci
 
 Sitemap: https://embt.fr/sitemap.xml
