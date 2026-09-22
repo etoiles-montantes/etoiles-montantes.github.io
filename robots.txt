@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# pages sans intérêt pour les moteurs
+Disallow: /merci.html
+
+Sitemap: https://embt.fr/sitemap.xml
