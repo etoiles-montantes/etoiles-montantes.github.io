@@ -105,6 +105,25 @@
 
       <div class="form-grid">
 
+        <!-- ============================================================
+             MOTIF DU MESSAGE
+             Ce bloc est écrit en premier pour que le motif arrive en tête
+             du mail reçu. La propriété order le replace à l'écran entre
+             la structure et le message : l'ordre visuel ne change pas.
+             Pour ajouter un choix, copie une ligne <option>.
+             ============================================================ -->
+        <div class="field field-large" style="order:1">
+          <label for="motif">Votre message concerne…</label>
+          <select id="motif" name="Motif" required>
+            <option value="">Choisir…</option>
+            <option>Faire un don financier</option>
+            <option>Devenir partenaire</option>
+            <option>Donner du matériel</option>
+            <option>Participer à un ou plusieurs événements</option>
+            <option>Autre</option>
+          </select>
+        </div>
+
         <div class="field">
           <label for="prenom">Prénom</label>
           <input id="prenom" name="Prénom" type="text" required>
@@ -130,28 +149,13 @@
           <input id="structure" name="Structure" type="text" placeholder="Laissez vide si à titre personnel">
         </div>
 
-        <!-- ============================================================
-             MOTIF DU MESSAGE
-             Pour ajouter un choix, copie une ligne <option>.
-             ============================================================ -->
-        <div class="field field-large">
-          <label for="motif">Votre message concerne…</label>
-          <select id="motif" name="Motif" required>
-            <option value="">Choisir…</option>
-            <option>Faire un don financier</option>
-            <option>Devenir partenaire</option>
-            <option>Donner du matériel</option>
-            <option>Participer à un ou plusieurs événements</option>
-            <option>Autre</option>
-          </select>
-        </div>
 
-        <div class="field field-large">
+        <div class="field field-large" style="order:2">
           <label for="message">Votre message</label>
           <textarea id="message" name="Message" placeholder="Dites-nous en un peu plus…" required></textarea>
         </div>
 
-        <div class="consent">
+        <div class="consent" style="order:3">
           <input id="consent" name="Consentement" type="checkbox" value="Oui" required>
           <label for="consent">
             J'autorise l'EMBT à conserver ces informations pour traiter ma demande
@@ -159,7 +163,7 @@
           </label>
         </div>
 
-        <div class="form-send">
+        <div class="form-send" style="order:4">
           <button type="submit" class="btn btn-red">Envoyer mon message</button>
         </div>
 
