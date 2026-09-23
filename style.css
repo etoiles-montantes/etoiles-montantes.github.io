@@ -144,6 +144,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
   .action{grid-column:span 2}
   .action:nth-child(4){grid-column:2/span 2}
   .action:nth-child(5){grid-column:auto/span 2}
+  /* à trois colonnes, une série de trois cartes tient sur une seule ligne :
+     le centrage prévu pour les écrans moyens n'a plus lieu d'être */
+  .action:nth-child(3):last-child{grid-column:auto/span 2}
 }
 .action{background:var(--creme);border:2px solid var(--navy);padding:0 26px 28px}
 .action h3{font-size:21px;text-transform:uppercase;margin-bottom:12px}
