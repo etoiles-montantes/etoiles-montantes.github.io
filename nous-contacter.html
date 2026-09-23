@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nous soutenir — EMBT</title>
-<meta name="description" content="Dons, partenariats, matériel : chaque soutien finance directement les stages et les jeunes.">
+<title>Nous écrire — EMBT</title>
+<meta name="description" content="Contactez l'EMBT : don, partenariat, matériel ou participation à nos événements.">
 
 
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="canonical" href="https://embt.fr/nous-soutenir">
+<link rel="canonical" href="https://embt.fr/nous-contacter">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="EMBT">
-<meta property="og:title" content="Nous soutenir — EMBT">
-<meta property="og:description" content="Dons, partenariats, matériel : chaque soutien finance directement les stages et les jeunes.">
-<meta property="og:url" content="https://embt.fr/nous-soutenir">
+<meta property="og:title" content="Rejoindre l'aventure — EMBT">
+<meta property="og:description" content="Déposez votre candidature pour rejoindre le projet Élite de l'EMBT.">
+<meta property="og:url" content="https://embt.fr/nous-contacter">
 <meta property="og:image" content="https://embt.fr/partage.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -67,7 +67,7 @@
     <a href="projet-elite">Projet Élite</a>
     <a href="nos-actions">Nos actions</a>
     <a href="maevasoa-basketball">Maevasoa Basketball</a>
-    <a href="nous-soutenir" class='actif'>Nous soutenir</a>
+    <a href="nous-soutenir">Nous soutenir</a>
     <div class="drawer-separateur"></div>
     <a href="staff">Staff</a>
     <a href="partenaires">Partenaires</a>
@@ -75,7 +75,7 @@
 
 </aside>
 
-<section class="section section-creme" id="soutenir">
+<section class="section section-creme" id="contact-formulaire">
   <img class="ghost-soft" src="embleme-filigrane.png" alt="" aria-hidden="true">
   <div class="wrap">
     <div class="divider">
@@ -84,37 +84,93 @@
       </svg>
       <i></i>
     </div>
-    <h1>Nous soutenir</h1>
-        <p class="lead">Chaque soutien, quel qu'il soit, a une importance capitale dans le fonctionnement général de l'associtation.</p>
+    <h1>Nous écrire</h1>
+    <p class="lead">
+      Une question, une envie de nous aider, une proposition ? Dites-nous
+      en quelques mots ce qui vous amène, nous revenons vers vous.
+    </p>
 
-    <div class="support">
-      <article class="support-item">
-        <div class="top"><i></i><i></i><i></i></div>
-        <h3>Faire un don financier</h3>
-        <p>Ponctuels ou réguliers, les dons financiers sont d'une aide primordiale pour nous, ils permettent de mieux développer nos différents projets. Chacun est libre de participer à l'aventure EMBT.</p>
-      </article>
-      <article class="support-item">
-        <div class="top"><i></i><i></i><i></i></div>
-        <h3>Devenir partenaire</h3>
-        <p>Essentielles dans la mise en place de nos actions (soutien financier, mise à disposition de matériel gymnase etc.), les entreprises publique et privée sont les bienvenues pour toute collaboration.</p>
-      </article>
-      <article class="support-item">
-        <div class="top"><i></i><i></i><i></i></div>
-        <h3>Donner du matériel</h3>
-        <p>Ballons, équipement, textile, jouets, livres etc. Très importants pour nous, les dons servent directement ici lors de nos évènements ou dans le cadre de nos actions humanitaires à Madagascar.</p>
-      </article>
-      <article class="support-item">
-        <div class="top"><i></i><i></i><i></i></div>
-        <h3>Venir sur nos événements</h3>
-        <p>Coacher, arbitrer, tenir une buvette, filmer... Notre équipe bénévole sera toujours là pour vous accueillir, chaque aide a un poids considérable et est fondamental pour ce que l'on veut construire.</p>
-      </article>
-    </div>
+    <!-- ============================================================
+         OÙ ARRIVENT LES MESSAGES
+         L'adresse après action="...formsubmit.co/" reçoit les mails.
+         Pour changer de destinataire, modifie-la ici.
+         ============================================================ -->
+    <form class="form" action="https://formsubmit.co/contact@embt.fr" method="POST">
 
-    <div class="hero-actions">
-      <a href="nous-contacter" class="btn btn-gold">Nous écrire</a>
-    </div>
+      <input type="hidden" name="_subject" value="Nouveau message depuis le site EMBT">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://embt.fr/merci-message">
+      <input type="text" name="_honey" class="trap" tabindex="-1" autocomplete="off">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="prenom">Prénom</label>
+          <input id="prenom" name="Prénom" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="nom">Nom</label>
+          <input id="nom" name="Nom" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Adresse mail</label>
+          <input id="email" name="Email" type="email" required>
+          <p class="hint">C'est à cette adresse que nous répondrons.</p>
+        </div>
+
+        <div class="field">
+          <label for="tel">Téléphone</label>
+          <input id="tel" name="Téléphone" type="tel">
+          <p class="hint">Facultatif.</p>
+        </div>
+
+        <div class="field field-large">
+          <label for="structure">Entreprise, club ou association</label>
+          <input id="structure" name="Structure" type="text">
+          <p class="hint">Laissez vide si vous écrivez à titre personnel.</p>
+        </div>
+
+        <!-- ============================================================
+             MOTIF DU MESSAGE
+             Pour ajouter un choix, copie une ligne <option>.
+             ============================================================ -->
+        <div class="field field-large">
+          <label for="motif">Pourquoi nous contactez-vous ?</label>
+          <select id="motif" name="Motif" required>
+            <option value="">Choisir…</option>
+            <option>Faire un don financier</option>
+            <option>Devenir partenaire</option>
+            <option>Donner du matériel</option>
+            <option>Venir sur vos événements</option>
+            <option>Autre</option>
+          </select>
+        </div>
+
+        <div class="field field-large">
+          <label for="message">Votre message</label>
+          <textarea id="message" name="Message" placeholder="Dites-nous en un peu plus…" required></textarea>
+        </div>
+
+        <div class="consent">
+          <input id="consent" name="Consentement" type="checkbox" value="Oui" required>
+          <label for="consent">
+            J'autorise l'EMBT à conserver ces informations pour traiter ma demande
+            et me recontacter. Elles ne sont ni revendues ni transmises à des tiers.
+          </label>
+        </div>
+
+        <div class="form-send">
+          <button type="submit" class="btn btn-red">Envoyer mon message</button>
+        </div>
+
+      </div>
+    </form>
   </div>
 </section>
+
 <section class="section section-navy" id="contact">
   <div class="wrap">
     <div class="divider">
