@@ -118,19 +118,16 @@
         <div class="field">
           <label for="email">Adresse mail</label>
           <input id="email" name="Email" type="email" required>
-          <p class="hint">C'est à cette adresse que nous répondrons.</p>
         </div>
 
         <div class="field">
           <label for="tel">Téléphone</label>
           <input id="tel" name="Téléphone" type="tel">
-          <p class="hint">Facultatif.</p>
         </div>
 
         <div class="field field-large">
           <label for="structure">Entreprise, club ou association</label>
-          <input id="structure" name="Structure" type="text">
-          <p class="hint">Laissez vide si vous écrivez à titre personnel.</p>
+          <input id="structure" name="Structure" type="text" placeholder="Laissez vide si à titre personnel">
         </div>
 
         <!-- ============================================================
@@ -138,13 +135,13 @@
              Pour ajouter un choix, copie une ligne <option>.
              ============================================================ -->
         <div class="field field-large">
-          <label for="motif">Pourquoi nous contactez-vous ?</label>
+          <label for="motif">Votre message concerne…</label>
           <select id="motif" name="Motif" required>
             <option value="">Choisir…</option>
             <option>Faire un don financier</option>
             <option>Devenir partenaire</option>
             <option>Donner du matériel</option>
-            <option>Venir sur vos événements</option>
+            <option>Participer à un ou plusieurs événements</option>
             <option>Autre</option>
           </select>
         </div>
