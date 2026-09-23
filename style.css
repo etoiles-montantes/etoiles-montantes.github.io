@@ -450,3 +450,6 @@ body > header,body > section{transition:margin-left .22s ease}
 .fiche-texte{max-width:62ch;margin:0 auto 18px;font-size:17px;color:var(--navy)}
 .fiche-retour{margin-top:40px;font-size:16px}
 .fiche-retour a{color:var(--bordeaux);text-decoration:underline;text-underline-offset:3px}
+
+/* lien dans un paragraphe sur fond clair */
+.lien{color:var(--bordeaux);text-decoration:underline;text-underline-offset:3px}
