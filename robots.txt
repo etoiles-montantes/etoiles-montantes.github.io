@@ -4,5 +4,6 @@ Allow: /
 # pages sans intérêt pour les moteurs
 Disallow: /merci
 Disallow: /merci-message
+Disallow: /merci-inscription
 
 Sitemap: https://embt.fr/sitemap.xml
