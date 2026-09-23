@@ -136,6 +136,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
   .actions{grid-template-columns:repeat(4,1fr)}
   .action{grid-column:span 2}
   .action:nth-child(5){grid-column:2/span 2}
+  /* série de trois cartes : la dernière, seule sur sa ligne, est centrée */
+  .action:nth-child(3):last-child{grid-column:2/span 2}
 }
 @media(min-width:960px){
   .actions{grid-template-columns:repeat(6,1fr)}
