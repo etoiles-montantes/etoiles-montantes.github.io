@@ -131,7 +131,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 /* ============================================================
    10. NOS ACTIONS
    ============================================================ */
-.actions{margin-top:44px;display:grid;gap:18px}
+.actions{margin-top:44px;display:grid;gap:18px;grid-auto-rows:1fr}  /* toutes les cartes à la même hauteur */
 @media(min-width:640px){
   .actions{grid-template-columns:repeat(4,1fr)}
   .action{grid-column:span 2}
@@ -148,12 +148,12 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
      le centrage prévu pour les écrans moyens n'a plus lieu d'être */
   .action:nth-child(3):last-child{grid-column:auto/span 2}
 }
-.action{background:var(--creme);border:2px solid var(--navy);padding:0 26px 28px}
+.action{background:var(--creme);border:2px solid var(--navy);padding:0 26px 28px;display:flex;flex-direction:column}
 .action h3{font-size:21px;text-transform:uppercase;margin-bottom:12px}
 .action p{font-size:16px;color:rgba(9,33,52,.8)}
-/* les cartes d'actions n'ont pas toujours de bouton : on dégage le sien
-   plutôt que d'ajouter une marge sous chaque paragraphe */
-.action .btn{margin-top:22px}
+/* le bouton se pose au bas de la carte, quelle que soit la longueur du texte */
+.action .btn,.event .btn{margin-top:auto;align-self:flex-start}
+.action p,.event p{margin-bottom:22px}
 /* sur fond marine, le texte des cartes repasse en marine */
 .section-navy .action,
 .section-navy .support-item,
@@ -161,12 +161,12 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 /* ============================================================
    12. ÉVÉNEMENTS
    ============================================================ */
-.events{margin-top:44px;display:grid;gap:20px}
+.events{margin-top:44px;display:grid;gap:20px;grid-auto-rows:1fr}
 @media(min-width:820px){.events{grid-template-columns:1fr 1fr}}
 
-.event{background:var(--creme);border:2px solid var(--navy);padding:0 26px 28px}
+.event{background:var(--creme);border:2px solid var(--navy);padding:0 26px 28px;display:flex;flex-direction:column}
 /* bandeau tricolore en tête de chaque carte */
-.top{display:flex;margin:0 -26px 22px;height:7px}
+.top{display:flex;margin:0 -26px 22px;height:7px;flex:none}
 .top i{flex:1}
 .top i:nth-child(1){background:var(--navy)}
 .top i:nth-child(2){background:var(--bordeaux)}
@@ -184,9 +184,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 /* ============================================================
    14. NOUS SOUTENIR
    ============================================================ */
-.support{margin-top:40px;display:grid;gap:18px}
+.support{margin-top:40px;display:grid;gap:18px;grid-auto-rows:1fr}
 @media(min-width:700px){.support{grid-template-columns:1fr 1fr}}
-.support-item{background:var(--creme);border:2px solid var(--navy);padding:0 26px 28px}
+.support-item{background:var(--creme);border:2px solid var(--navy);padding:0 26px 28px;display:flex;flex-direction:column}
 .support-item h3{font-size:19px;text-transform:uppercase;margin-bottom:8px}
 .support-item p{font-size:16px;color:rgba(9,33,52,.8)}
 
