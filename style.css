@@ -70,12 +70,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
   display:inline-block;font-family:var(--font-body);
   font-weight:600;font-size:16px;text-decoration:none;
   padding:15px 26px;border:2px solid transparent;
-  transition:background .18s ease,border-color .18s ease;
 }
 .btn-gold{background:var(--gold);color:var(--navy)}
-.btn-gold:hover{background:#DCA71E}
 .btn-red{background:var(--bordeaux);color:var(--creme)}
-.btn-red:hover{background:#B01A28}
 
 
 
@@ -458,6 +455,10 @@ body > header,body > section{transition:margin-left .22s ease}
 .fiche-texte{max-width:62ch;margin:0 auto 18px;font-size:17px;color:var(--navy)}
 .fiche-retour{margin-top:40px;font-size:16px}
 .fiche-retour a{color:var(--bordeaux);text-decoration:underline;text-underline-offset:3px}
+
+/* page des mentions légales : sous-titres et texte au fil de la lecture */
+#mentions h2{font-size:clamp(20px,3.2vw,26px);max-width:none;margin:40px 0 14px}
+#mentions .fiche-texte{max-width:72ch;margin:0 0 14px;text-align:left}
 
 /* lien dans un paragraphe sur fond clair */
 .lien{color:var(--bordeaux);text-decoration:underline;text-underline-offset:3px}
