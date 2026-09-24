@@ -151,6 +151,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .action{background:var(--creme);border:2px solid var(--navy);padding:0 26px 28px}
 .action h3{font-size:21px;text-transform:uppercase;margin-bottom:12px}
 .action p{font-size:16px;color:rgba(9,33,52,.8)}
+/* les cartes d'actions n'ont pas toujours de bouton : on dégage le sien
+   plutôt que d'ajouter une marge sous chaque paragraphe */
+.action .btn{margin-top:22px}
 /* sur fond marine, le texte des cartes repasse en marine */
 .section-navy .action,
 .section-navy .support-item,
