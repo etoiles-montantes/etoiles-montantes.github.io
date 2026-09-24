@@ -2,8 +2,8 @@ User-agent: *
 Allow: /
 
 # pages sans intérêt pour les moteurs
-Disallow: /candidature-recue
-Disallow: /message-recu
-Disallow: /inscription-recue
+Disallow: /candidature-envoyee
+Disallow: /message-envoye
+Disallow: /inscription-envoyee
 
 Sitemap: https://embt.fr/sitemap.xml

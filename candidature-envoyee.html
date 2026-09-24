@@ -3,27 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
 
-<title>Contact — EMBT</title>
-<meta name="description" content="Contactez l'EMBT : don, partenariat, matériel ou participation à nos événements.">
+<title>Candidature envoyée — EMBT</title>
+<meta name="description" content="Votre candidature a bien été envoyée à l'EMBT.">
 
 
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="canonical" href="https://embt.fr/contact">
+<link rel="canonical" href="https://embt.fr/candidature-envoyee">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="EMBT">
-<meta property="og:title" content="Contact — EMBT">
-<meta property="og:description" content="Contactez l'EMBT : don, partenariat, matériel ou participation à nos événements.">
-<meta property="og:url" content="https://embt.fr/contact">
+<meta property="og:title" content="Candidature envoyée — EMBT">
+<meta property="og:description" content="Votre candidature a bien été envoyée à l'EMBT.">
+<meta property="og:url" content="https://embt.fr/candidature-envoyee">
 <meta property="og:image" content="https://embt.fr/partage.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -75,7 +77,7 @@
 
 </aside>
 
-<section class="section section-creme" id="contact-formulaire">
+<section class="section section-creme" id="confirmation">
   <img class="ghost-soft" src="embleme-filigrane.png" alt="" aria-hidden="true">
   <div class="wrap">
     <div class="divider">
@@ -84,91 +86,19 @@
       </svg>
       <i></i>
     </div>
-    <h1>Nous écrire</h1>
+
+    <h1>Candidature<br>bien envoyée</h1>
+
+    <p class="lead">Merci d'avoir pris le temps de nous écrire. Nous étudions chaque dossier
+      individuellement et revenons vers vous par mail dans les meilleurs délais.</p>
     <p class="lead">
-      Une question, une envie de nous aider, une proposition ? Dites-nous
-      en quelques mots ce qui vous amène, nous revenons vers vous.
+      Une question ? Écrivez-nous à
+      <a href="mailto:contact@embt.fr" class="lien">contact@embt.fr</a>.
     </p>
 
-    <!-- ============================================================
-         OÙ ARRIVENT LES MESSAGES
-         L'adresse après action="...formsubmit.co/" reçoit les mails.
-         Pour changer de destinataire, modifie-la ici.
-         ============================================================ -->
-    <form class="form" action="https://formsubmit.co/contact@embt.fr" method="POST">
-
-      <input type="hidden" name="_subject" value="Nouveau message depuis le site EMBT">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://embt.fr/message-envoye">
-      <input type="text" name="_honey" class="trap" tabindex="-1" autocomplete="off">
-
-      <div class="form-grid">
-
-        <!-- ============================================================
-             MOTIF DU MESSAGE
-             Ce bloc est écrit en premier pour que le motif arrive en tête
-             du mail reçu. La propriété order le replace à l'écran entre
-             la structure et le message : l'ordre visuel ne change pas.
-             Pour ajouter un choix, copie une ligne <option>.
-             ============================================================ -->
-        <div class="field field-large" style="order:1">
-          <label for="motif">Votre message concerne…</label>
-          <select id="motif" name="Motif" required>
-            <option value="">Choisir…</option>
-            <option>Faire un don financier</option>
-            <option>Devenir partenaire</option>
-            <option>Donner du matériel</option>
-            <option>Participer à un ou plusieurs événements</option>
-            <option>Autre</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="prenom">Prénom</label>
-          <input id="prenom" name="Prénom" type="text" required>
-        </div>
-
-        <div class="field">
-          <label for="nom">Nom</label>
-          <input id="nom" name="Nom" type="text" required>
-        </div>
-
-        <div class="field">
-          <label for="email">Adresse mail</label>
-          <input id="email" name="Email" type="email" required>
-        </div>
-
-        <div class="field">
-          <label for="tel">Téléphone</label>
-          <input id="tel" name="Téléphone" type="tel">
-        </div>
-
-        <div class="field field-large">
-          <label for="structure">Entreprise, club ou association</label>
-          <input id="structure" name="Structure" type="text" placeholder="Laissez vide si à titre personnel">
-        </div>
-
-
-        <div class="field field-large" style="order:2">
-          <label for="message">Votre message</label>
-          <textarea id="message" name="Message" placeholder="Dites-nous en un peu plus…" required></textarea>
-        </div>
-
-        <div class="consent" style="order:3">
-          <input id="consent" name="Consentement" type="checkbox" value="Oui" required>
-          <label for="consent">
-            J'autorise l'EMBT à conserver ces informations pour traiter ma demande
-            et me recontacter. Elles ne sont ni revendues ni transmises à des tiers.
-          </label>
-        </div>
-
-        <div class="form-send" style="order:4">
-          <button type="submit" class="btn btn-red">Envoyer mon message</button>
-        </div>
-
-      </div>
-    </form>
+    <div class="hero-actions">
+      <a href="/" class="btn btn-red">Retour au site</a>
+    </div>
   </div>
 </section>
 
