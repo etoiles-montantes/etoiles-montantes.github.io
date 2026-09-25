@@ -421,17 +421,18 @@ body > header,body > section{transition:margin-left .22s ease}
 }
 .coach-role{
   font-size:clamp(17px,2.6vw,21px);font-weight:600;line-height:1.35;
-  color:var(--bordeaux);margin:0 auto 4px;max-width:46ch;
+  color:var(--bordeaux);margin:0 auto 26px;max-width:46ch;
 }
-/* le club de rattachement, sous le rôle */
-.coach-club{font-size:16px;color:var(--navy);margin:0 auto 30px}
-.coach-texte{max-width:58ch;margin:0 auto 14px;font-size:17px;color:var(--navy);text-align:left}
-.coach-texte b{color:var(--bordeaux)}
-/* la phrase de fin, mise à part */
+
+/* les cinq blocs de la fiche, séparés par un blanc franc */
+.coach-club,.coach-diplome{
+  max-width:58ch;margin:0 auto 22px;font-size:17px;font-weight:600;
+  color:var(--navy);text-align:left;
+}
+.coach-texte{max-width:58ch;margin:0 auto 22px;font-size:17px;color:var(--navy);text-align:left}
 .coach-phrase{
-  max-width:58ch;margin:26px auto 0;font-size:18px;font-style:italic;
-  color:var(--navy);border-top:2px solid var(--gold);padding-top:20px;
-  text-align:left;
+  max-width:58ch;margin:26px auto 0;font-size:17px;font-weight:600;
+  color:var(--navy);border-top:2px solid var(--gold);padding-top:22px;text-align:left;
 }
 
 /* lien vers le site d'un partenaire */
