@@ -79,3 +79,14 @@
 
   monter();
 })();
+
+// ------------------------------------------------------------
+// Installation du site en application (plein écran, hors connexion).
+// Sans ce bloc, l'icône posée sur l'écran d'accueil reste un simple
+// raccourci et s'ouvre avec la barre du navigateur.
+// ------------------------------------------------------------
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').catch(function () {});
+  });
+}

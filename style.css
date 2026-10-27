@@ -339,6 +339,13 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 
 .drawer-separateur{height:2px;background:var(--gold);margin:10px 22px}
 
+/* « Espace coach » : entrée verrouillée du menu, suivie de son cadenas */
+.drawer nav a.verrou{display:flex;align-items:center;gap:9px}
+.drawer nav a.verrou::after{
+  content:"";width:13px;height:17px;flex:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 18'%3E%3Cpath d='M4.5 8V5.5a2.5 2.5 0 0 1 5 0V8' fill='none' stroke='%23C59216' stroke-width='1.7' stroke-linecap='round'/%3E%3Crect x='2' y='8' width='10' height='8' rx='1.6' fill='%23C59216'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
 .burger:focus-visible,.drawer nav a:focus-visible{
   outline:3px solid var(--gold);outline-offset:3px;
 }
