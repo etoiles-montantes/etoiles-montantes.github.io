@@ -7,7 +7,8 @@
 // une mise à jour du dépôt est donc visible tout de suite.
 // Sans réseau, c'est la dernière version consultée qui s'affiche.
 
-const CACHE = 'embt-v1';
+// Changer ce numéro vide l'ancien cache chez tous les visiteurs.
+const CACHE = 'embt-v2';
 
 self.addEventListener('install', () => self.skipWaiting());
 
@@ -27,8 +28,13 @@ self.addEventListener('fetch', e => {
   e.respondWith(
     fetch(demande)
       .then(reponse => {
-        const copie = reponse.clone();
-        caches.open(CACHE).then(c => c.put(demande, copie)).catch(() => {});
+        // On ne garde que les réponses valides. Mettre une erreur en cache
+        // la figerait : une page absente le temps d'une reconstruction
+        // resterait introuvable longtemps après son retour en ligne.
+        if (reponse.ok) {
+          const copie = reponse.clone();
+          caches.open(CACHE).then(c => c.put(demande, copie)).catch(() => {});
+        }
         return reponse;
       })
       .catch(() => caches.match(demande))
