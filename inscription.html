@@ -89,9 +89,22 @@
       <i></i>
     </div>
     <h1>Inscription</h1>
+    <!-- ============================================================
+         AUCUN ÉVÉNEMENT OUVERT AUX INSCRIPTIONS
+
+         Le formulaire est masqué par l'attribut hidden, sur la balise
+         <form> plus bas. Il est intact, simplement invisible.
+
+         POUR LE REMETTRE EN SERVICE :
+         1. ajoute les événements dans la liste déroulante ;
+         2. retire l'attribut hidden de la balise <form> ;
+         3. remplace le paragraphe ci-dessous par le texte d'origine :
+            Choisissez l'événement qui vous intéresse et remplissez ce
+            formulaire. Nous confirmons chaque inscription par mail.
+         ============================================================ -->
     <p class="lead">
-      Choisissez l'événement qui vous intéresse et remplissez ce formulaire.
-      Nous confirmons chaque inscription par mail.
+      Aucun événement n'est ouvert aux inscriptions pour le moment.
+      Les prochaines dates seront annoncées sur la page d'accueil.
     </p>
 
     <!-- ============================================================
@@ -99,7 +112,7 @@
          L'adresse après action="...formsubmit.co/" reçoit les mails.
          Pour changer de destinataire, modifie-la ici.
          ============================================================ -->
-    <form class="form" action="https://formsubmit.co/contact@embt.fr" method="POST">
+    <form class="form" hidden action="https://formsubmit.co/contact@embt.fr" method="POST">
 
       <!-- réglages du service, invisibles pour le visiteur -->
       <input type="hidden" name="_subject" value="Nouvelle inscription EMBT">
@@ -124,7 +137,6 @@
           <label for="evenement">Quel événement ?</label>
           <select id="evenement" name="Événement" required>
             <option value="">Choisir…</option>
-            <option>Stage U11 Toussaint 2026</option>
           </select>
         </div>
 

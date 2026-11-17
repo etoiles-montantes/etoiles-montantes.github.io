@@ -2,7 +2,7 @@
 //
 // Les boutons « S'inscrire » des cartes d'événements peuvent transmettre
 // l'événement concerné dans l'adresse, sous la forme :
-//     inscription?evenement=Stage%20U11%20Toussaint%202026
+//     inscription?evenement=Nom%20exact%20de%20l%27evenement
 // Le script retrouve alors l'option correspondante et la sélectionne.
 // Sans paramètre, ou si l'événement n'existe pas dans la liste,
 // le formulaire s'ouvre normalement sur « Choisir… ».
